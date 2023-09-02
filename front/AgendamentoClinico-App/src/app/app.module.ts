@@ -8,6 +8,7 @@ import { PainelComponent } from './pages/painel/painel.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { ConsultasComponent } from './pages/consultas/consultas.component';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ConsultasComponent } from './pages/consultas/consultas.component';
     PainelComponent,
     AgendamentoComponent,
     PacientesComponent,
-    ConsultasComponent
+    ConsultasComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
