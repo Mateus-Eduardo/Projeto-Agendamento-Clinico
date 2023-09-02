@@ -32,8 +32,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTreeModule} from '@angular/material/tree';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatSortModule } from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSortModule} from '@angular/material/sort';
 
 
 @NgModule({
