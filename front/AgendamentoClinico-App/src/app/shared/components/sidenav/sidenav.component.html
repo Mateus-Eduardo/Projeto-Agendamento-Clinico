@@ -1,7 +1,11 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': '' " >
   <div class="logo-container">
-    <button class="logo"> A </button>
-    <div class="logo-text" *ngIf = "collapsed" > Angular </div>
+    <button class="logo">
+      <i class=" fas fa-person-chalkboard" ></i>
+    </button>
+    <div class="logo-text" *ngIf = "collapsed" >
+      <img src="../../../../assets/img/_NEWCARD.PNG" style="width: 110px; align-items: center; margin-left: -9px; " alt="">
+    </div>
     <button class="btn-close" *ngIf = "collapsed" >
       <i class="fas fa-times close-icon"></i>
     </button>
