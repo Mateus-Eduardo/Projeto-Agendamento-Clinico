@@ -1,12 +1,12 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': '' " >
   <div class="logo-container">
-    <button class="logo">
+    <button class="logo" (click)="toggleCollapse()" >
       <i class=" fas fa-person-chalkboard" ></i>
     </button>
     <div class="logo-text" *ngIf = "collapsed" >
-      <img src="../../../../assets/img/_NEWCARD.PNG" style="width: 110px; align-items: center; margin-left: -9px; " alt="">
+      <img src="../../../../assets/img/_NEWCARD.PNG" style="width: 120px; align-items: center; margin-left: -9px; " alt="">
     </div>
-    <button class="btn-close" *ngIf = "collapsed" >
+    <button class="btn-close" *ngIf = "collapsed" (click)="closeSidenav()" >
       <i class="fas fa-times close-icon"></i>
     </button>
   </div>
