@@ -1,7 +1,7 @@
 export const navbarData = [
   {
     routeLink: 'painel',
-    icon: 'fal, fa-home',
+    icon: 'fas fa-chart-line',
     label: 'Painel',
   }
 
