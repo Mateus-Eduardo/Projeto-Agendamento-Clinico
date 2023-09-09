@@ -18,6 +18,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 
 
@@ -41,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    PainelComponent
+    PainelComponent,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
