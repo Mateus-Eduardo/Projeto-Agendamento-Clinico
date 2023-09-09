@@ -1,7 +1,7 @@
 /*#1c2931*/
 
 .sidenav {
-  background: #263238;
+  background: #e0e0e0;
   transition: all .5s ease;
   position: fixed;
   z-index: 1;
@@ -17,7 +17,7 @@
       width: 100%;
 
       .logo {
-          background: #fff;
+          background-color: transparent;
           text-align: center;
           width: 3rem;
           min-width: 3rem;
@@ -34,6 +34,11 @@
           font-size: 24px;
           font-weight: 700;
           color: #fff;
+
+          .logo-image{
+            width: 150px;
+            margin-left: -20px;
+          }
       }
 
       .btn-close {
@@ -46,7 +51,7 @@
           border: none;
 
           .fa-times {
-              color: #fff;
+              color: #1c2931;
               font-size: 24px;
           }
       }

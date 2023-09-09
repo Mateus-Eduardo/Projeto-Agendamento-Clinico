@@ -44,7 +44,7 @@ interface SideNavToggle {
 export class SidenavComponent {
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
-  collapsed = false;
+  collapsed = true;
   screenWidth = 0;
   navData = navbarData;
 

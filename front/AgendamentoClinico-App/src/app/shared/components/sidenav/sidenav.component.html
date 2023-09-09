@@ -5,11 +5,11 @@
       </button>
       <div class="logo-text" @fadeInOut *ngIf="collapsed">
         <a href="">
-          <img src="../../../../assets/img/_NEWCARD.PNG" style="width: 150px;" alt="">
+          <img class="logo-image" src="../../../../assets/img/_NEWCARD.PNG" alt="">
         </a>
       </div>
       <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
-          <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-xmark btn-close fa-times "></i>
       </button>
   </div>
   <ul class="sidenav-nav">
