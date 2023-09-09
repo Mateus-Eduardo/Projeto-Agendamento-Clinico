@@ -1,47 +1,22 @@
-
-<mat-sidenav-container>
-  <mat-sidenav
-    class="sidenav"
-    #sidenav
-    [opened]="!smallScreen"
-    [fixedInViewport]="true"
-    [mode]="sidenavMode"
-  >
-    <mat-toolbar color="primary"> Smart Exemples </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/buttonIcon"> Button Icons</a>
-      <a mat-list-item routerLink="/formFieldInput"> Form Field Inputs</a>
-      <a mat-list-item routerLink="/progressBarSpinner"> Progress Bar Spinner</a>
-      <a mat-list-item routerLink="/tabs"> Tabs </a>
-      <a mat-list-item routerLink="/datepicker"> Datepickers </a>
-      <a mat-list-item routerLink="/snackbar"> Snackbar </a>
-      <a mat-list-item routerLink="/dialog"> Dialog </a>
-      <a mat-list-item routerLink="/datatable"> Datatable </a>
-    </mat-nav-list>
-  </mat-sidenav>
-</mat-sidenav-container>
-
-
-<!-- <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': '' " >
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
   <div class="logo-container">
-    <button class="logo" (click)="toggleCollapse()" >
-      <i class=" fas fa-person-chalkboard" ></i>
-    </button>
-    <div class="logo-text" *ngIf = "collapsed" >
-      <img class="logoImagem" src="../../../../assets/img/_NEWCARD.PNG"  alt="">
-    </div>
-    <button class="btn-close" *ngIf = "collapsed" (click)="closeSidenav()" >
-      <i class="fas fa-times close-icon"></i>
-    </button>
+      <button class="logo" (click)="toggleCollapse()">A</button>
+      <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
+      <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+          <i class="fal fa-times close-icon"></i>
+      </button>
   </div>
-
   <ul class="sidenav-nav">
-    <li class="sidenav-nav-item" *ngFor="let data of navData" >
-      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]">
-        <i class="sidenav-link-icon" [class]="data.icon"></i>
-        <span class="sidenav-link-text"> {{data.label}} </span>
-      </a>
-
-    </li>
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+          <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}"
+          >
+              <i class="sidenav-link-icon" [class]="data.icon"></i>
+              <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                  {{data.label}}
+              </span>
+          </a>
+      </li>
   </ul>
-</div> -->
+</div>
