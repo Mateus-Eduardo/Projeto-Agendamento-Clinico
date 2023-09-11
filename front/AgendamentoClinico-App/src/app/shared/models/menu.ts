@@ -2,19 +2,24 @@ import { MenuItem } from "./menuItem";
 
 export const menuItems: MenuItem[ ] = [
   {
-    routeLink: '/dashboard',
-    icon: '/fa-solid fa-user',
+    routeLink: '/painel',
+    icon: '/fa-solid fa-chart-line',
     label: 'Painel'
   },
   {
-    routeLink: '/courses',
-    icon: '/fas fa-person-chalkboard',
-    label: 'Agendamento'
+    routeLink: '/agendamento',
+    icon: '/fa-solid fa-calendar-days',
+    label: 'Agendamentos'
   },
   {
-    routeLink: '/teachers',
-    icon: '/fas fa-person-chalkboard',
-    label: 'Cadastro'
+    routeLink: '/pacientes',
+    icon: '/fa-solid fa-users',
+    label: 'Pacientes'
+  },
+  {
+    routeLink: '/consultas',
+    icon: '/fa-regular fa-calendar',
+    label: 'Consultas'
   },
 
 
