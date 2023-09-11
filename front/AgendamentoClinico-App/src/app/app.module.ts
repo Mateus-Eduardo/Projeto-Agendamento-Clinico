@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
 
 
@@ -29,7 +30,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     AgendamentoComponent,
     PacientesComponent,
     ConsultasComponent,
-    SidenavComponent
+    SidenavComponent,
+    ToolbarComponent
 
 
   ],
