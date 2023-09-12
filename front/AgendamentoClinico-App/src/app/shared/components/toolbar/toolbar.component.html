@@ -1,1 +1,24 @@
-<p>toolbar works!</p>
+<mat-toolbar align="end" class="toolbar-menu">
+
+  <mat-toolbar-row>
+    <a href="/dashboard" mat-button class="logo" >
+
+      <span *ngIf="!popText"> {{menuTitle}} </span>
+    </a>
+
+    <div class="content-center">
+      <div>
+        <button class="right-button"  mat-button [matMenuTriggerFor]="menu" >
+          <i class="fa-solid fa-circle-user space-right-icon" ></i>
+        </button>
+        <mat-menu  #menu ="matMenu">
+          <a href="" mat-menu-item >test</a>
+          <a href="" mat-menu-item >test</a>
+          <a href="" mat-menu-item >test</a>
+          <a href="" mat-menu-item >test</a>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>
