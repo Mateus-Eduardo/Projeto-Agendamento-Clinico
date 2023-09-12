@@ -9,17 +9,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
-// import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
-// import { PacientesComponent } from './pages/pacientes/pacientes.component';
-// import { ConsultasComponent } from './pages/consultas/consultas.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
-import { ToobarTitleComponent } from './shared/components/toobar-title/toobar-title.component';
+
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 
@@ -29,7 +28,7 @@ import { ToobarTitleComponent } from './shared/components/toobar-title/toobar-ti
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
-    ToobarTitleComponent
+
 
 
   ],
@@ -45,7 +44,8 @@ import { ToobarTitleComponent } from './shared/components/toobar-title/toobar-ti
     ReactiveFormsModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

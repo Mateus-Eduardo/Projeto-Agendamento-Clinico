@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToobarTitleComponent } from './toobar-title.component';
+import { ToolbarTitleComponent } from './toolbar-title.component';
 
 describe('ToobarTitleComponent', () => {
-  let component: ToobarTitleComponent;
-  let fixture: ComponentFixture<ToobarTitleComponent>;
+  let component: ToolbarTitleComponent;
+  let fixture: ComponentFixture<ToolbarTitleComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ToobarTitleComponent]
+      declarations: [ToolbarTitleComponent]
     });
-    fixture = TestBed.createComponent(ToobarTitleComponent);
+    fixture = TestBed.createComponent(ToolbarTitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
