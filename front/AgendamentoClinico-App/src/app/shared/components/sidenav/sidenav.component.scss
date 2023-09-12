@@ -83,7 +83,7 @@
           display: flex;
           align-items: center;
           height: 3rem;
-          color: #1c2931;
+          color: #1f1f1f;
           text-decoration: none;
           border-radius: 0.15rem;
           transition: all .3s ease;
@@ -108,14 +108,14 @@
 
   .sidenav-nav-item:hover {
       .sidenav-nav-link {
-          background-color: #1c2931;
+          background-color: #0e6a8e;;
           color: #fff;
       }
   }
 }
 
 .active {
-  background-color: #1c2931;
+  background-color: #0e6a8e;;
 
   .sidenav-link-icon,
   .sidenav-link-text {
