@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // { path: 'painel', loadChildren: () =>import('./pages/painel/painel.component').then(m => m.PainelComponent)},
+  { path: 'painel', loadChildren: () =>import('./pages/painel/painel.module').then(m => m.PainelModule)},
 
 
 

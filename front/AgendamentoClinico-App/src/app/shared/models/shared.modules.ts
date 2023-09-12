@@ -4,8 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ToolbarComponent } from '../components/toolbar/toolbar.component'; 
-
 
 @NgModule({
   imports:[
@@ -16,12 +14,11 @@ import { ToolbarComponent } from '../components/toolbar/toolbar.component';
   ],
 
   declarations:[
-    ToolbarComponent,
 
   ],
 
   exports: [
-    ToolbarComponent,
+    
     ReactiveFormsModule
   ]
 })

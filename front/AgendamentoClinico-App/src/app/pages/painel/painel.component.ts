@@ -27,9 +27,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-painel',
   templateUrl: './painel.component.html',
   styleUrls: ['./painel.component.scss'],
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule],
 })
+
 export class PainelComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
