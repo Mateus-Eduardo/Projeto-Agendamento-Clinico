@@ -10,5 +10,6 @@ export class ToolbarComponent {
   @Input() popText = true;
   @Input() menuTitle = '';
   @Input() smallScreen = false;
+  @Input() title: string = "";
 
 }

@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
+import { ToobarTitleComponent } from './shared/components/toobar-title/toobar-title.component';
 
 
 
@@ -27,7 +28,8 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
   declarations: [
     AppComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ToobarTitleComponent
 
 
   ],
