@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
-import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
-import { PacientesComponent } from './pages/pacientes/pacientes.component';
-import { ConsultasComponent } from './pages/consultas/consultas.component';
+// import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
+// import { PacientesComponent } from './pages/pacientes/pacientes.component';
+// import { ConsultasComponent } from './pages/consultas/consultas.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,9 +26,6 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 @NgModule({
   declarations: [
     AppComponent,
-    AgendamentoComponent,
-    PacientesComponent,
-    ConsultasComponent,
     SidenavComponent,
     ToolbarComponent
 
