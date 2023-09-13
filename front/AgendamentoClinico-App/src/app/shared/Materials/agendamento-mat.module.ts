@@ -9,6 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 
 
 
+
 @NgModule({
 
   exports: [
@@ -18,7 +19,8 @@ import { MatTableModule } from '@angular/material/table';
     MatTooltipModule,
     MatInputModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    
   ],
   declarations:[],
   providers:[],

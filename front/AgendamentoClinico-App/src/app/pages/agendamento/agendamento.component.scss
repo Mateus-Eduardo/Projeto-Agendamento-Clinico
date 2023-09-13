@@ -1,22 +1,21 @@
 .content{
-  background-color: #fff;
+  background-color: #0e6a8e;
+
 }
 
-.form-pesquisar {
-  display: flex;
-  width: 700px;
-  align-items: center;
+
+.calendar{
   margin: 0 auto;
-  margin-top: 15px;
+  width: 70%;
+  padding: 15px 0 15px 0;
 
+
+  .demo-inline-calendar-card {
+    width: 100%;
+
+  }
 }
 
-mdc-notched-outline:hover{
-  color: #fff;
-}
 
-mat-label:hover{
-  color: #fff;
-}
 
 
