@@ -11,7 +11,13 @@
 
       <mat-form-field class="form-pesquisar">
         <mat-label>Buscar</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+        <input
+          matInput
+          class="input-style"
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. Nome"
+          #input
+        />
       </mat-form-field>
 
       <div class="mat-elevation-z4">
