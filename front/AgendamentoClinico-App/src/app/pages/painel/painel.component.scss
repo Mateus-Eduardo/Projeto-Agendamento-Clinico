@@ -1,5 +1,6 @@
 .container-geral {
   width: 100%;
+  min-width: 625px;
   height: 85vh;
   padding: 25px;
   padding-bottom: 100px;
@@ -12,12 +13,10 @@
   box-shadow: 0.2rem 0.2rem 1rem 0.2rem #000000;
 
   @media (min-width: 801px) and (max-width: 1900px) {
-    height: 100%;
     height: 80vh;
   }
 
   @media (max-width: 800px) {
-    height: 100%;
     height: 80vh;
   }
 
@@ -40,40 +39,70 @@
         display: flex;
         max-width: 100px;
         height: auto;
-        margin-left: 25%;
-        margin-right: -25%;
-        margin-top: 5px;
+        margin-left: 40%;
+        margin-right: -45%;
+        // margin-top: 110px;
+        @media (min-width: 1801px) and (max-width: 1900px){
+          margin-left: 42%;
+          margin-right: -32%;
+        }
+
+        @media (min-width: 1101px) and (max-width: 1800px) {
+          // margin-top: 25px;
+          margin-left: 37%;
+          margin-right: -35%;
+        }
+
+        @media (min-width: 801px) and (max-width: 1100px) {
+          // margin-top: 25px;
+          margin-left: 30%;
+          margin-right: -32%;
+        }
+
+        @media (max-width: 800px) {
+          // margin-top: 30px;
+          margin-left: 29%;
+          margin-right: -27%;
+        }
 
       }
 
+      .weather-data {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
 
+        @media (min-width: 801px) and (max-width: 1900px) {
+          margin-top: 20px;
+
+        }
+
+        @media (max-width: 800px) {
+          margin-top: 20px;
+        }
+
+        .location {
+          color: #fff;
+          text-align: center;
+          font-size: 2em;
+        }
+
+        .temperature {
+          padding-top: 50px;
+          color: #fff;
+          font-size: 5rem;
+          text-align: center;
+          font-weight: 400;
+        }
+
+      }
     }
-
-    .weather-data {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      .location {
-        color: #fff;
-        text-align: center;
-        font-size: 2em;
-      }
-
-      .temperature {
-        padding-top: 50px;
-        color: #fff;
-        font-size: 5rem;
-        text-align: center;
-        font-weight: 400;
-      }
-    }
-
   }
 
   .contentcard {
