@@ -1,4 +1,5 @@
-<div class="container-geral ">
+<div class="container-geral">
+
   <div>
     <!-- <app-toolbar-title title="Painel" icon="fa-solid fa-chart-line">
 
@@ -6,18 +7,55 @@
 
     <div class="weather-container mat-elevation-z4">
       <div class="upperdata">
-        <img src="../../../assets/Painel/icon/severe-weather.png" *ngIf="24 > 25" class="weather-icon">
-        <img src="../../../assets/Painel/icon/sun.png" *ngIf="24 <= 25" class="weather-icon">
+        <img
+          src="../../../assets/Painel/icon/severe-weather.png"
+          *ngIf="24 > 25"
+          class="weather-icon"
+        />
+        <img
+          src="../../../assets/Painel/icon/sun.png"
+          *ngIf="24 <= 25"
+          class="weather-icon"
+        />
 
-        <div class="weather-data" >
-          <div class="location"> São Paulo </div>
-          <div class="temperature" >{{ 24.50 | number: '1.0-0' }}ºC</div>
+        <div class="weather-data">
+          <div class="location">São Paulo</div>
+          <div class="temperature">{{ 37.5 | number : "1.0-0" }}ºC</div>
         </div>
-
       </div>
 
       <div class="lowerdata">
+        <mat-card>
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/vento.png" />
+            <span>VENTO</span>
+          </div>
+          <div class="info-block-value">50 Km/h</div>
+        </mat-card>
 
+        <mat-card>
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
+            <span>MIN</span>
+          </div>
+          <div class="info-block-value">25ºC</div>
+        </mat-card>
+
+        <mat-card>
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-quente.png" />
+            <span>MAX</span>
+          </div>
+          <div class="info-block-value">40ºC</div>
+        </mat-card>
+
+        <mat-card>
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/umidade.png" />
+            <span>UMIDADE</span>
+          </div>
+          <div class="info-block-value">78%</div>
+        </mat-card>
       </div>
     </div>
 
@@ -25,63 +63,49 @@
 
     <div class="cardslinks">
       <div class="contentcard">
-
         <a routerLink="/agendamento">
           <mat-card class="card-secundarios">
             <mat-card-header>
-              <mat-card-title class="card-text"> Confira os Agendamentos</mat-card-title>
+              <mat-card-title class="card-text">
+                Confira os Agendamentos</mat-card-title
+              >
             </mat-card-header>
             <mat-card-content>
-
-
               <mat-divider></mat-divider>
             </mat-card-content>
-
           </mat-card>
         </a>
-
       </div>
 
       <div class="contentcard">
-
         <a routerLink="/pacientes">
           <mat-card class="card-secundarios">
             <mat-card-header>
-              <mat-card-title class="card-text"> Veja a lista de pacientes</mat-card-title>
+              <mat-card-title class="card-text">
+                Veja a lista de pacientes</mat-card-title
+              >
             </mat-card-header>
             <mat-card-content>
-
-
               <mat-divider></mat-divider>
             </mat-card-content>
-
           </mat-card>
         </a>
-
-
       </div>
 
       <div class="contentcard">
         <a routerLink="/consultas">
           <mat-card class="card-secundarios">
             <mat-card-header>
-
-              <mat-card-title class="card-text"> Profissionais de saúde</mat-card-title>
+              <mat-card-title class="card-text">
+                Profissionais de saúde</mat-card-title
+              >
             </mat-card-header>
             <mat-card-content>
-
-
               <mat-divider></mat-divider>
             </mat-card-content>
-
           </mat-card>
         </a>
-
-
       </div>
-
     </div>
-
   </div>
-
 </div>
