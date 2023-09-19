@@ -1,13 +1,16 @@
 <mat-toolbar align="end" class="toolbar-menu">
   <mat-toolbar-row>
-    <a href="/painel" mat-button class="logo">
+    <a mat-button class="logo">
       <span *ngIf="popText"> {{ menuTitle }} </span>
     </a>
-    <img
+    <a routerLink="/painel" >
+      <img
         class="logo-image"
         src="../../../../assets/logo/_NEWCARD.PNG"
         alt=""
       />
+    </a>
+
 
       <span>{{title}}</span>
 
