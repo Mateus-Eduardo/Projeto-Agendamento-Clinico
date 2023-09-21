@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './shared/Materials/material.module';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +44,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     MatIconModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
   useValue: {appearance: 'outline'}}],
