@@ -1,5 +1,8 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { Component, } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { WeatherApiService } from 'src/app/services/painel/weather-api.service';
+
+
 
 @Component({
   selector: 'app-painel',
@@ -33,7 +36,21 @@ import { Component, } from '@angular/core';
   ]
 })
 
-export class PainelComponent  {
+export class PainelComponent implements OnInit {
+
+  constructor(private weatherService: WeatherApiService) {}
 
 
+  ngOnInit(): void {
+    this.weatherService.getWeather('sao paulo')
+      .subscribe(
+        res => console.log(res),
+        err => console.log(err)
+      )
+  }
+
+  submitLocation(cityName: any){
+    console.log(cityName.value);
+    return false
+  }
 }
