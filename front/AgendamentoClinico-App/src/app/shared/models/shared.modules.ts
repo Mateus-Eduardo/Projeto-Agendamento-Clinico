@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ToolbarTitleComponent } from '../components/toolbar-title/toolbar-title.component';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -17,6 +18,7 @@ import { ToolbarTitleComponent } from '../components/toolbar-title/toolbar-title
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
+    MatInputModule,
 
     FlexLayoutModule,
     ReactiveFormsModule

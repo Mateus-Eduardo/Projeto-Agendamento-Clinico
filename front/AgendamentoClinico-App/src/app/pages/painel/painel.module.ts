@@ -9,6 +9,8 @@ import { PainelMaterialModule } from 'src/app/shared/Materials/painel-mat.module
 
 
 
+
+
 @NgModule({
   declarations: [
     PainelComponent
@@ -18,7 +20,7 @@ import { PainelMaterialModule } from 'src/app/shared/Materials/painel-mat.module
     CommonModule,
     PainelRoutingModule,
     PainelMaterialModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class PainelModule {}
