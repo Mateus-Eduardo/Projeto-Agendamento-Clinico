@@ -42,15 +42,26 @@ export class PainelComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.weatherService.getWeather('sao paulo')
+
+  }
+
+  getWeather(cityName: string){
+    this.weatherService.getWeather(cityName)
       .subscribe(
         res => console.log(res),
         err => console.log(err)
       )
   }
 
-  submitLocation(cityName: any){
-    console.log(cityName.value);
+
+
+  submitLocation(cityName: HTMLInputElement){
+
+    this.getWeather(cityName.value);
+
+    cityName.value = '';
+    cityName.focus();
+
     return false
   }
 }
