@@ -5,14 +5,14 @@
   // padding: 25px;
   padding-bottom: 50px;
   background-image: url('../../../assets/Painel/img/sky.jpg');
-  // background: radial-gradient(circle at 10% 10%, rgb(71,102,165), rgb(23,67,132));
+  // background: radial-gradient(circle at 10% 10%, rgb(0, 0, 0), rgb(11, 80, 184));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   // border-radius: 4px;
   box-shadow: 0.063rem 0 1.25rem 0 #000000;
 
-  @media (min-width: 801px) and (max-width: 1900px) {
+  @media (min-width: 801px) and (max-width: 4900px) {
     height: 81vh;
   }
 
@@ -20,7 +20,14 @@
     height: 81vh;
   }
 
-  .card-boasvindas{
+  .content{
+    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.425));
+    width: 100%;
+    height: 108.5%;
+    padding-bottom: 250px;
+  }
+
+  .card-boasvindas {
 
     display: flex;
     flex-direction: column;
@@ -29,10 +36,10 @@
     background: none;
     color: #fff;
     text-decoration: dashed;
-    background: radial-gradient(circle at 10% 10%, rgba(50, 50, 50, 0.124), rgba(1, 41, 70, 0.552));
+    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.124), rgba(0, 0, 0, 0.552));
     text-transform: uppercase;
 
-    mat-card-title{
+    mat-card-title {
       padding: 15px;
     }
 
@@ -40,71 +47,96 @@
 
   .search-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 70%;
     margin: 0 auto;
-    padding-top: 15px;
+    padding-top: 10px;
     margin-bottom: -15px;
     color: #fff !important;
-
-    mat-card-subtitle{
+  
+    mat-card-subtitle {
       width: 100%;
       text-transform: uppercase;
       font-size: 0.7rem;
       color: #ffffffac;
       padding: 15px;
-      
-
     }
-
-    .form-pesquisar{
+  
+    .form-pesquisar {
       margin: 0 auto;
       width: 100%;
       padding: -15px;
-
-
+  
       mat-label {
-
         border-radius: 150px;
         padding: -15px;
       }
-
+  
       .input-style {
-        background-color: #0000002e;
-        padding: -1500px;
+        
+        width: 93%;
+        background-color: #ffffff63;
+        border-radius: 5px;
+
+        @media (min-width: 1801px) and (max-width: 1900px) {
+          width: 93%;
+  
+        }
+  
+        @media (min-width: 1101px) and (max-width: 1800px) {
+          width: 90%;
+          
+        }
+  
+        @media (min-width: 801px) and (max-width: 1100px) {
+          width: 85%;          
+        }
+  
+        @media (max-width: 800px) {
+          width: 70%;          
+        }
 
       }
 
+      mat-button{
+        color: #fff;
+      }
     }
 
-    .botao-pesquisar {
-      display: flex;
-      justify-content: end;
+    .form-pesquisar button {
       color: #fff;
-      font-size: 1.3rem;
-      padding: -15px;
-      // margin-right: 100px;
-      height: 50px;
-      margin-right: -59px;
-      margin-bottom: 20px ;
+      font-size: 1rem;
+      height: 10px;
       border-radius: 500px;
-      text-shadow:1px 1px 1px rgb(100, 100, 100);
-
+      text-shadow: 1px 1px 1px rgb(0, 0, 0);
+      order: 1; 
     }
-
-
-
-
+  
+    // .botao-pesquisar {
+    //   display: flex;
+    //   justify-content: end;
+    //   color: #fff;
+    //   font-size: 1.2rem;
+    //   height: 50px;
+    //   margin-left: auto; 
+    //   border-radius: 500px;
+    //   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    // }
   }
+
   .weather-container {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    width: 80%;
+    width: 40%;
     height: 100%;
+    margin-top:15px;
+    padding-top: 25px;
     padding-bottom: 25px;
-    background: radial-gradient(circle at 10% 10%, rgba(50, 50, 50, 0.5), rgba(1, 41, 70, 0.7));
+    border-radius: 4px;
+    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.397));
 
 
     .upperdata {
@@ -117,26 +149,29 @@
       align-items: center;
       justify-content: center;
       text-shadow: 1px 1px 1px rgb(100, 100, 100);
-      position:static;
+      position: static;
 
       @media (min-width: 1801px) and (max-width: 1900px) {
         margin-top: 15px;
+        height: 0.5px;
 
       }
 
       @media (min-width: 1101px) and (max-width: 1800px) {
         margin-top: 15px;
-        height: 20px;
+        height: 0.5px;
       }
 
       @media (min-width: 801px) and (max-width: 1100px) {
         margin-top: 15px;
-        height: 15px;
+        height: 0.5px;
+        margin-bottom: 0;
       }
 
       @media (max-width: 800px) {
         margin-top: 15px;
-        height: 5px;
+        height: 0.5px;
+        margin-bottom: 0;
       }
 
       img {
@@ -152,21 +187,21 @@
         // margin-top: 110px;
         @media (min-width: 1801px) and (max-width: 1900px) {
 
-          margin-left: 30%;
+          margin-left: 50%;
           margin-right: -40%;
         }
 
         @media (min-width: 1101px) and (max-width: 1800px) {
           max-width: 50px;
-          margin-left: 40%;
-          margin-right: -42%;
+          margin-left: 38%;
+          margin-right: -40%;
           margin-top: 70px;
         }
 
         @media (min-width: 801px) and (max-width: 1100px) {
           max-width: 50px;
-          margin-left: 38%;
-          margin-right: -40%;
+          margin-left: 35%;
+          margin-right: -35%;
           margin-top: 70px;
         }
 

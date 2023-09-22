@@ -1,89 +1,73 @@
 <div class="container-geral">
-  <div>
-    <!-- <app-toolbar-title title="Painel" icon="fa-solid fa-chart-line">
+  <div class="content">
+    <div>
+      <!-- <app-toolbar-title title="Painel" icon="fa-solid fa-chart-line">
 
           </app-toolbar-title> -->
-    <div>
-      <mat-card class="card-boasvindas">
-        <mat-card-title> Bom Dia </mat-card-title>
-        <mat-card-content>
-          Verifique à esquerda para iniciar um agendamento ou consultar
-          informações
-        </mat-card-content>
+      <div>
+        <mat-card class="card-boasvindas">
+          <mat-card-title> Bom Dia </mat-card-title>
+          <mat-card-content>
+            Verifique à esquerda para iniciar um agendamento ou consultar
+            informações
+          </mat-card-content>
 
 
-      </mat-card>
-    </div>
-    <div class="search-container">
-      <mat-card-subtitle>
-        Veja como está o clima em sua cidade
-      </mat-card-subtitle>
-      <mat-form-field
-        class="form-pesquisar"
-        (submit)="submitLocation(cityName)"
-      >
-        <input
-          matInput
-          class="input-style"
-          placeholder="Digite a Cidade"
-          #cityName
-        />
+        </mat-card>
+      </div>
+      <div class="search-container">
+        <mat-card-subtitle>
+          Veja como está o clima em sua cidade
+        </mat-card-subtitle>
+        <mat-form-field class="form-pesquisar" (submit)="submitLocation(cityName)">
+          <input matInput class="input-style" placeholder="Digite a Cidade" #cityName />
+          <button mat-button>
+            <i class="fa-solid fa-magnifying-glass" ></i>
+          </button>
+        </mat-form-field>       
 
-      </mat-form-field>
-      <button mat-button class="botao-pesquisar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+      </div>
 
-    </div>
+      <div class="weather-container mat-elevation-z4">
+        <div class="upperdata">
+          <img src="../../../assets/Painel/icon/severe-weather.png" *ngIf="24 > 25" class="weather-icon" />
+          <img src="../../../assets/Painel/icon/sun.png" *ngIf="24 <= 25" class="weather-icon" />
 
-    <div class="weather-container mat-elevation-z4">
-      <div class="upperdata">
-        <img
-          src="../../../assets/Painel/icon/severe-weather.png"
-          *ngIf="24 > 25"
-          class="weather-icon"
-        />
-        <img
-          src="../../../assets/Painel/icon/sun.png"
-          *ngIf="24 <= 25"
-          class="weather-icon"
-        />
+          <div class="weather-data">
+            <div class="location">São Paulo</div>
+            <div class="temperature">{{ 37.5 | number : "1.0-0" }}ºC</div>
+          </div>
+        </div>
 
-        <div class="weather-data">
-          <div class="location">São Paulo</div>
-          <div class="temperature">{{ 37.5 | number : "1.0-0" }}ºC</div>
+        <div class="lowerdata">
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
+            <span>MIN</span>
+          </div>
+          <div class="info-block-value">25ºC</div>
+
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-quente.png" />
+            <span>MAX</span>
+          </div>
+          <div class="info-block-value">40ºC</div>
+        </div>
+        <div class="lowerdata">
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/vento.png" />
+            <span>VENTO</span>
+          </div>
+          <div class="info-block-value">50 Km/h</div>
+
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/umidade.png" />
+            <span>UMIDADE</span>
+          </div>
+          <div class="info-block-value">78%</div>
         </div>
       </div>
 
-      <div class="lowerdata">
-        <div class="info-block">
-          <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
-          <span>MIN</span>
-        </div>
-        <div class="info-block-value">25ºC</div>
-
-        <div class="info-block">
-          <img src=" ../../../../../assets/Painel/img/clima-quente.png" />
-          <span>MAX</span>
-        </div>
-        <div class="info-block-value">40ºC</div>
-      </div>
-      <div class="lowerdata">
-        <div class="info-block">
-          <img src=" ../../../../../assets/Painel/img/vento.png" />
-          <span>VENTO</span>
-        </div>
-        <div class="info-block-value">50 Km/h</div>
-
-        <div class="info-block">
-          <img src=" ../../../../../assets/Painel/img/umidade.png" />
-          <span>UMIDADE</span>
-        </div>
-        <div class="info-block-value">78%</div>
-      </div>
-    </div>
-
-    <!-- <div class="cardslinks">
+      <!-- <div class="cardslinks">
       <div class="contentcard">
         <a routerLink="/agendamento">
           <mat-card class="card-secundarios">
@@ -129,5 +113,6 @@
         </a>
       </div>
     </div> -->
+    </div>
   </div>
 </div>
