@@ -32,10 +32,13 @@
     text-decoration: dashed;
     background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.551), rgba(0, 0, 0, 0.665));
     text-transform: uppercase;
+    border-radius: 0;
 
     mat-card-title {
       padding: 25px;
       padding-bottom: 55px;
+      border-radius: none;
+      border-radius: 0;
     }
 
   }
@@ -135,8 +138,8 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    width: 70%;
-    height: 100%;
+    width: 50%;
+    height: 40vh;
     margin-top:5px;
     padding-top: 10px;
     // padding-bottom: 25px;
@@ -157,13 +160,13 @@
       position: static;
 
       @media (min-width: 1801px) and (max-width: 1900px) {
-        margin-top: 15px;
+        margin-top: 25px;
         height: 0.5px;
 
       }
 
       @media (min-width: 1101px) and (max-width: 1800px) {
-        margin-top: 15px;
+        margin-top: 75px;
         height: 0.5px;
       }
 
@@ -314,7 +317,7 @@
         align-items: center;
         justify-content: center;
         margin-right: 20px;
-        font-size: 1.25rem;
+        font-size: 0.9rem;
         color: #fff;
 
       }
@@ -400,7 +403,7 @@
         align-items: center;
         justify-content: center;
         margin: 20px 25px 25px 0;
-        font-size: 1.25rem;
+        font-size: 0.9rem;
         /* Tamanho de fonte aumentado para alinhar mais acima */
         color: #fff;
 
@@ -436,7 +439,7 @@
         align-items: center;
         justify-content: center;
         margin: 20px 25px 25px 0;
-        font-size: 0.8rem;
+        font-size: 0.5rem;
         color: #fff;
 
       }
