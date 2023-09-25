@@ -4,7 +4,7 @@
   height: 85vh;
   // padding: 25px;
   padding-bottom: 50px;
-  background-image: url('../../../assets/Painel/img/sky.jpg');
+  background-image: url('../../../assets/Painel/img/Sky-3.jpg');
   // background: radial-gradient(circle at 10% 10%, rgb(0, 0, 0), rgb(11, 80, 184));
   background-size: cover;
   background-position: center;
@@ -30,7 +30,7 @@
     background: none;
     color: #fff;
     text-decoration: dashed;
-    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.551), rgba(0, 0, 0, 0.665));
+    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.277), rgba(0, 0, 0, 0.665));
     text-transform: uppercase;
     border-radius: 0;
 
@@ -68,18 +68,18 @@
       width: 100%;
       margin-bottom: 25px;
 
-
-      mat-label {
-        border-radius: 150px;
-
-      }
-
       .input-style {
 
-        width: 93%;
+        width: 92%;
+        height: 25px;
         background-color: #0000009a;
         color: #fff;
-        border-radius: 5px;
+        border-radius: 1px;
+
+        .input-style:active{
+          color: #0000009a;
+        }
+
 
 
         @media (min-width: 1801px) and (max-width: 1900px) {
@@ -107,15 +107,17 @@
       }
     }
 
-    .form-pesquisar button {
+    .botao-pesquisar {
       color: #fff;
       background: none;
       font-size: 1rem;
       // height: 10px;
-      border-radius: 550px;
+      // border-radius: 550px;
       text-shadow: 2px 2px 4px rgb(0, 0, 0);
       order: 1;
-      margin-left: -10px;
+      margin-left: 10px;
+      border: none;
+      cursor: pointer;
 
       button:hover{
         background: none;
@@ -135,6 +137,7 @@
   }
 
   .weather-container {
+    display: block;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -144,11 +147,17 @@
     padding-top: 10px;
     // padding-bottom: 25px;
     border-radius: 4px;
-    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.71), rgba(0, 40, 72, 0.51));
+    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.276), rgba(255, 255, 255, 0.252));
+
+    @media (min-width: 801px) and (max-width: 1100px) {
+      margin-top: 15px;
+      height: 80%;
+      margin-bottom: 0;
+    }
 
 
     .upperdata {
-      margin-top: 100px;
+      // margin-top: 2px;
       margin-bottom: 70px;
       // border: #000000 solid 1px;
       width: 100%;
@@ -184,12 +193,12 @@
 
       img {
         display: flex;
-        max-width: 100px;
+        max-width: 80px;
         height: auto;
         margin-top: 45px;
         margin-bottom: -45px;
-        margin-left: 38%;
-        margin-right: -45%;
+        margin-left: 35%;
+        margin-right: -40%;
 
 
         // margin-top: 110px;
@@ -207,10 +216,10 @@
         }
 
         @media (min-width: 801px) and (max-width: 1100px) {
-          max-width: 50px;
+          max-width: 40px;
           margin-left: 35%;
-          margin-right: -35%;
-          margin-top: -15px;
+          margin-right: -40%;
+          margin-top: 30px;
         }
 
         @media (max-width: 800px) {
@@ -247,15 +256,27 @@
           text-align: center;
           font-size: 1.2rem;
           text-shadow: 2px 2px 4px rgb(0, 0, 0);
+          margin-left: -50px;
 
-          @media (min-width: 801px) and (max-width: 1900px) {
+          @media (min-width: 1101px) and (max-width: 1900px) {
             font-size: 1rem;
-            margin-top: -40px;
+            margin-top: -50px;
+            margin-left: -20px;
+            margin-bottom: 10px;
+          }
+
+          @media (min-width: 801px) and (max-width: 1100px) {
+            font-size: 1rem;
+            margin-top: 5px;
+            margin-left: -20px;
+            margin-bottom: -30px;
           }
 
           @media (max-width: 800px) {
             font-size: 1rem;
-            margin-top: -40px;
+            margin-top: -50px;
+            margin-left: -20px;
+            margin-bottom: 5px;
           }
         }
 
@@ -267,9 +288,15 @@
           font-weight: 400;
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.577);
 
-          @media (min-width: 801px) and (max-width: 1900px) {
+          @media (min-width: 1101px) and (max-width: 1900px) {
             font-size: 25px;
             margin-top: -40px;
+          }
+
+          @media (min-width: 801px) and (max-width: 1100px) {
+            font-size: 20px;
+
+            margin-bottom: 15px;
           }
 
           @media (max-width: 800px) {
@@ -439,7 +466,7 @@
         align-items: center;
         justify-content: center;
         margin: 20px 25px 25px 0;
-        font-size: 0.5rem;
+        font-size: 0.8rem;
         color: #fff;
 
       }
@@ -502,6 +529,13 @@
 
     }
 
+  }
+
+  .icones-clima{
+
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 5px;
   }
 
 }
