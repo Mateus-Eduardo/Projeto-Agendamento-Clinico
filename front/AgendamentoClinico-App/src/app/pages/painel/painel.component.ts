@@ -38,30 +38,29 @@ import { WeatherApiService } from 'src/app/services/painel/weather-api.service';
 
 export class PainelComponent implements OnInit {
 
+
+  weather: any;
+
   constructor(private weatherService: WeatherApiService) {}
 
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-
+  getWeather(cityName: string) {
+    this.weatherService.getWeather(cityName).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.weather = res;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
-  getWeather(cityName: string){
-    this.weatherService.getWeather(cityName)
-      .subscribe(
-        res => console.log(res),
-        err => console.log(err)
-      )
-  }
-
-
-
-  submitLocation(cityName: HTMLInputElement){
-
+  submitLocation(cityName: HTMLInputElement) {
     this.getWeather(cityName.value);
-
     cityName.value = '';
     cityName.focus();
-
-    return false
+    return false;
   }
 }
