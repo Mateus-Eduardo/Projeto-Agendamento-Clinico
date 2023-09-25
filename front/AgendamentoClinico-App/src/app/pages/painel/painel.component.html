@@ -24,13 +24,13 @@
           placeholder="Digite a Cidade"
           #cityName
         />
-        <button mat-button type="submit">
+        <button class="botao-pesquisar" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
     </div>
 
-    <div class="weather-container mat-elevation-z4">
+    <div class="weather-container mat-elevation-z4" *ngIf="weather">
       <div class="upperdata">
         <img
           src="../../../assets/Painel/icon/severe-weather.png"
@@ -44,8 +44,11 @@
         />
 
         <div class="weather-data">
-          <div class="location">São Paulo</div>
-          <div class="temperature">{{ 37.5 | number : "1.0-0" }}ºC</div>
+          <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            São Paulo
+          </div>
+          <div class="temperature">{{weather.main.temp}}ºC</div>
         </div>
       </div>
 
