@@ -53,19 +53,27 @@
         </div>
       </div>
 
-      <div class="lowerdata">
-        <div class="info-block">
-          <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
-          <span>Sen.Térm.</span>
+        <div class="lowerdata">
 
-        </div>
-        <div class="info-block-value">{{weather.main.feels_like| number: '1.0-0'}}ºC</div>
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
+            <span>Sens. Term.</span>
+            <div class="info-block-value">{{weather.main.feels_like | number: '1.0-0'}}ºC</div>
 
-        <div class="info-block">
-          <img src=" ../../../../../assets/Painel/img/clima-quente.png" />
-          <span>Max</span>
-        </div>
-        <div class="info-block-value">{{weather.main.temp_max| number: '1.0-0'}}ºC</div>
+          </div>
+
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
+            <span>MIN</span>
+
+          </div>
+          <div class="info-block-value">{{weather.main.temp_min| number: '1.0-0'}}ºC</div>
+
+          <div class="info-block">
+            <img src=" ../../../../../assets/Painel/img/clima-quente.png" />
+            <span>Max</span>
+          </div>
+          <div class="info-block-value">{{weather.main.temp_max| number: '1.0-0'}}ºC</div>
       </div>
       <div class="lowerdata2">
         <div class="info-block">
