@@ -45,38 +45,41 @@
 
         <div class="weather-data">
           <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            São Paulo
+            <i class="fa-solid fa-location-dot icone-local"></i>
+            {{ weather.name }}
+            <i class="fa-solid fa-city icone-cidade"></i>
           </div>
-          <div class="temperature">{{weather.main.temp}}ºC</div>
+          <div class="temperature">{{weather.main.temp| number: '1.0-0'}}ºC</div>
         </div>
       </div>
 
       <div class="lowerdata">
         <div class="info-block">
           <img src=" ../../../../../assets/Painel/img/clima-frio.png" />
-          <span>MIN</span>
+          <span>Sen.Térm.</span>
+
         </div>
-        <div class="info-block-value">25ºC</div>
+        <div class="info-block-value">{{weather.main.feels_like| number: '1.0-0'}}ºC</div>
 
         <div class="info-block">
           <img src=" ../../../../../assets/Painel/img/clima-quente.png" />
-          <span>MAX</span>
+          <span>Max</span>
         </div>
-        <div class="info-block-value">40ºC</div>
+        <div class="info-block-value">{{weather.main.temp_max| number: '1.0-0'}}ºC</div>
       </div>
       <div class="lowerdata2">
         <div class="info-block">
           <img src=" ../../../../../assets/Painel/img/vento.png" />
-          <span>VENTO</span>
+          <span>Vento</span>
         </div>
-        <div class="info-block-value">50 Km/h</div>
+        <div class="info-block-value">{{weather.wind.speed | number: '1.0-0'}} Km/h</div>
+
 
         <div class="info-block">
           <img src=" ../../../../../assets/Painel/img/umidade.png" />
-          <span>UMIDADE</span>
+          <span>Umidade</span>
         </div>
-        <div class="info-block-value">78%</div>
+        <div class="info-block-value">{{weather.main.humidity| number: '1.0-0'}}%</div>
       </div>
     </div>
 
