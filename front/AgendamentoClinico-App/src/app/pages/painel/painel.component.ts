@@ -53,13 +53,25 @@ export class PainelComponent implements OnInit {
         const kelvinTemp = res.main.temp;
         const celsiusTemp = kelvinTemp - 273.15;
 
+        const kelvinTempMin = res.main.temp_min;
+        const celsiusTempMin = kelvinTempMin - 273.15;
+
+        const kelvinTempMax = res.main.temp_max;
+        const celsiusTempMax = kelvinTempMax - 273.15;
+
+        const KelvinFeelsLike = res.main.feels_like;
+        const CelsiusTempFellsLike = KelvinFeelsLike - 273.15;
+
         console.log("Valor em Celsius (após a conversão):", celsiusTemp);
 
         this.weather = {
           ...res,
           main: {
             ...res.main,
-            temp: celsiusTemp
+            temp: celsiusTemp,
+            temp_min: celsiusTempMin,
+            temp_max: celsiusTempMax,
+            feels_like: CelsiusTempFellsLike
           }
         };
       },
