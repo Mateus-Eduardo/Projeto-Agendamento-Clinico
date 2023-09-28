@@ -130,7 +130,3 @@ export class PainelComponent implements OnInit {
     return false;
   }
 }
-
-
-
-
