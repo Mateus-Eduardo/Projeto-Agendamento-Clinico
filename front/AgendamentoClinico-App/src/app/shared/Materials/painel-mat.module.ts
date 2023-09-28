@@ -13,6 +13,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
 
 
+
+
 @NgModule({
 
   exports: [
@@ -25,7 +27,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatTableModule,
     MatCardModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+    
+
 
   ],
   declarations:[],
