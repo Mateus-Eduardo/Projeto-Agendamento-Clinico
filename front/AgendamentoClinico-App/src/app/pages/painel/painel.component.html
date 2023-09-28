@@ -1,14 +1,19 @@
-<div class="container-geral">
+<div class="container-geral" >
   <div>
     <!-- <app-toolbar-title title="Painel" icon="fa-solid fa-chart-line">
 
           </app-toolbar-title> -->
     <div>
       <mat-card class="card-boasvindas">
-        <mat-card-title> Bom Dia </mat-card-title>
-        <mat-card-content>
-          Verifique à esquerda para iniciar um agendamento ou consultar
-          informações
+        <mat-card-title class="boasvindas">
+          {{ greetings }}
+
+          <mat-icon class="iconeBoasVindas">thumb_up</mat-icon>
+
+        </mat-card-title>
+        <mat-card-content class="topAdvisor">
+          Verifique à esquerda para iniciar um agendamento, consultar
+          informações ou realizar um novo cadastro
         </mat-card-content>
       </mat-card>
     </div>
@@ -30,17 +35,11 @@
       </form>
     </div>
 
-    <div class="weather-container mat-elevation-z4" *ngIf="weather">
+    <div class="weather-container mat-elevation-z4" *ngIf="weather" >
       <div class="upperdata">
         <img
-          src="../../../assets/Painel/icon/severe-weather.png"
-          *ngIf="24 > 25"
-          class="weather-icon"
-        />
-        <img
-          src="../../../assets/Painel/icon/sun.png"
-          *ngIf="24 <= 25"
-          class="weather-icon"
+        [src]="weather.weather.iconUrl"
+        class="weather-icon"
         />
 
         <div class="weather-data">
@@ -62,7 +61,7 @@
           </div>
           <div class="info-block-value">{{weather.main.feels_like| number: '1.0-0'}}ºC</div>
 
-          
+
           <div class="info-block">
             <!-- <img src=" ../../../../../assets/Painel/img/clima-frio.png" /> -->
             <span>MIN</span>
@@ -71,10 +70,10 @@
           <div class="info-block-value">{{weather.main.temp_min| number: '1.0-0'}}ºC</div>
 
           <div class="info-block">
-            <!-- <img src=" ../../../../../assets/Painel/img/clima-quente.png" /> -->            
+            <!-- <img src=" ../../../../../assets/Painel/img/clima-quente.png" /> -->
             <span>Max</span>
             <i class="fa-solid fa-arrow-up"></i>
-            
+
           </div>
           <div class="info-block-value">{{weather.main.temp_max| number: '1.0-0'}}ºC</div>
       </div>
