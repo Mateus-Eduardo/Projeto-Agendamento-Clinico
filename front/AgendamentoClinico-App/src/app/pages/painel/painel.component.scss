@@ -1,6 +1,6 @@
 .container-geral {
   width: 100%;
-  min-width: 800px;
+  min-width: 400px;
   height: 85vh;
   // padding: 25px;
   padding-bottom: 50px;
@@ -10,8 +10,8 @@
   background-position: center;
   background-repeat: no-repeat;
   // border-radius: 4px;
-  box-shadow: 0.063rem 0 1.25rem 0 #000000;  
-  
+  box-shadow: 0.063rem 0 1.25rem 0 #000000;
+
 
   @media (min-width: 801px) and (max-width: 4900px) {
     height: 81vh;
@@ -29,15 +29,38 @@
     align-items: center;
     min-width: 100%;
     background: none;
-    color: #fff;
     text-decoration: dashed;
     background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.277), rgba(0, 0, 0, 0.665));
     text-transform: uppercase;
     border-radius: 0;
 
+    .boasvindas{
+      color: #f0f7fb;
+      font-size:x-large;
+      font-weight:400;
+      text-shadow: 1px 1px 2px #000000;
+
+    }
+
+    .topAdvisor{
+      color: #f0f7fb;
+      font-size:medium;
+      font-weight:lighter;
+      text-shadow: 2px 2px 2px #000000;
+
+    }
+
+    .iconeBoasVindas{
+
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+
+
     mat-card-title {
-      padding: 25px;
-      padding-bottom: 55px;
+      background: none;
+      padding: 15px;
+      padding-bottom: 25px;
       border-radius: none;
       border-radius: 0;
     }
@@ -54,13 +77,13 @@
     padding-top: 10px;
     margin-bottom: -15px;
 
-    color: #fff !important;
+    color: #f0f7fb !important;
 
     mat-card-subtitle {
       width: 100%;
       text-transform: uppercase;
       font-size: 0.7rem;
-      color: #ffffffac;
+      color: #f0f7fb93;
       padding: 15px;
     }
 
@@ -74,7 +97,7 @@
         width: 92%;
         height: 25px;
         background-color: #0000009a;
-        color: #fff;
+        color: #f0f7fb;
         border-radius: 1px;
 
         .input-style:active{
@@ -104,12 +127,12 @@
       }
 
       mat-button{
-        color: #fff;
+        color: #f0f7fb;
       }
     }
 
     .botao-pesquisar {
-      color: #fff;
+      color: #f0f7fb;
       background: none;
       font-size: 1rem;
       // height: 10px;
@@ -128,7 +151,7 @@
     // .botao-pesquisar {
     //   display: flex;
     //   justify-content: end;
-    //   color: #fff;
+    //   color: #f0f7fb;
     //   font-size: 1.2rem;
     //   height: 50px;
     //   margin-left: auto;
@@ -148,8 +171,8 @@
     padding-top: 10px;
     // padding-bottom: 25px;
     border-radius: 4px;
-    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.276), rgba(255, 255, 255, 0.252));
-    
+    background: radial-gradient(circle at 10% 10%, rgba(122, 122, 122, 0.277), rgba(0, 0, 0, 0.665));
+
     @media (min-width: 801px) and (max-width: 1100px) {
       margin-top: 15px;
       height: 80%;
@@ -255,7 +278,7 @@
         }
 
         .location {
-          color: #fff;
+          color: #f0f7fb;
           text-align: center;
           font-size: 1.2rem;
           text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -286,7 +309,7 @@
 
         .temperature {
           padding-top: 50px;
-          color: #fff;
+          color: #f0f7fb;
           font-size: 3rem;
           text-align: center;
           font-weight: 400;
@@ -329,7 +352,7 @@
         display: flex;
         align-items: center;
         margin-right: 5px;
-        color: #fff;
+        color: #f0f7fb;
 
 
 
@@ -341,7 +364,7 @@
 
         span {
           font-size: 0.7rem;
-          color: #fff;
+          color: #f0f7fb;
         }
       }
 
@@ -351,13 +374,13 @@
         justify-content: center;
         margin-right: 20px;
         font-size: 1.2rem;
-        color: #fff;
+        color: #f0f7fb;
 
       }
 
       @media (min-width: 1101px) and (max-width: 1800px){
         margin-top: -40px;
-        
+
       }
 
       @media (min-width: 801px) and (max-width: 1100px) {
@@ -382,7 +405,7 @@
 
         span {
           font-size: 0.5rem;
-          color: #fff;
+          color: #f0f7fb;
         }
       }
 
@@ -392,7 +415,7 @@
         justify-content: center;
         padding: 20px 5px 25px 0;
         font-size: 0.8rem;
-        color: #fff;
+        color: #f0f7fb;
 
       }
 
@@ -420,17 +443,17 @@
         display: flex;
         align-items: center;
         margin-right: 5px;
-        color: #fff;
-        
+        color: #f0f7fb;
+
         img {
           width: 2rem;
           margin-right: 10px;
-          
+
         }
 
         span {
           font-size: 0.7rem;
-          color: #fff;
+          color: #f0f7fb;
         }
       }
 
@@ -440,8 +463,8 @@
         justify-content: center;
         margin: 20px 25px 25px 0;
         font-size: 1.2rem;
-        text-transform:lowercase;      
-        color: #fff;
+        text-transform:lowercase;
+        color: #f0f7fb;
 
       }
 
@@ -458,7 +481,7 @@
       .info-block {
         display: flex;
         align-items: center;
-        color: #fff;
+        color: #f0f7fb;
 
         img {
           width: 1.2rem;
@@ -467,7 +490,7 @@
 
         span {
           font-size: 0.5rem;
-          color: #fff;
+          color: #f0f7fb;
         }
       }
 
@@ -477,7 +500,7 @@
         justify-content: center;
         margin: 20px 25px 25px 0;
         font-size: 0.8rem;
-        color: #fff;
+        color: #f0f7fb;
 
       }
 
@@ -521,7 +544,7 @@
   .card-secundarios {
     width: 100%;
     background: transparent;
-    color: #fff;
+    color: #f0f7fb;
     text-shadow: 1px 1px 1px rgba(0, 0, 0);
   }
 
@@ -544,7 +567,7 @@
   .icones-clima{
 
     font-size: 1.2rem;
-    color: #fff;
+    color: #1b2d3a;
     padding: 5px;
   }
 
