@@ -39,6 +39,7 @@ export class PainelComponent implements OnInit {
   weather: any;
   cityName: string = "Barra Bonita, São Paulo";
   greetings: string = '';
+  isLoading: boolean = true;
   iconMapping: { [key: string]: string } = {
     '01d': 'clear-sky.png',
     '02d': 'few-clouds.png',
@@ -116,9 +117,11 @@ export class PainelComponent implements OnInit {
             iconUrl: iconUrl,
           },
         };
+        this.isLoading = false;
       },
       (err) => {
         console.log(err);
+        this.isLoading = false;
       }
     );
   }

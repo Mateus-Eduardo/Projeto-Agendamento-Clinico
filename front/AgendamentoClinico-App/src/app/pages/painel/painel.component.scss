@@ -30,7 +30,7 @@
     min-width: 100%;
     background: none;
     text-decoration: dashed;
-    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.277), rgba(0, 0, 0, 0.665));
+    // background: radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.277), rgba(0, 72, 255, 0.175));
     text-transform: uppercase;
     border-radius: 0;
 
@@ -171,7 +171,7 @@
     padding-top: 10px;
     // padding-bottom: 25px;
     border-radius: 4px;
-    background: radial-gradient(circle at 10% 10%, rgba(122, 122, 122, 0.277), rgba(0, 0, 0, 0.665));
+    background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.277), rgba(255, 255, 255, 0.305));
 
     @media (min-width: 801px) and (max-width: 1100px) {
       margin-top: 15px;
