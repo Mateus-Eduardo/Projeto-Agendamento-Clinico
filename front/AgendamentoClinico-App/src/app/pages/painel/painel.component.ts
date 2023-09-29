@@ -11,20 +11,20 @@ import { WeatherApiService } from 'src/app/services/painel/weather-api.service';
     trigger('fadeInOut', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('1000ms',
+        animate('550ms',
           style({ opacity: 2 })
         )
       ]),
       transition(':leave', [
         style({ opacity: 2 }),
-        animate('1000ms',
+        animate('550ms',
           style({ opacity: 0 })
         )
       ])
     ]),
     trigger('rotate', [
       transition(':enter', [
-        animate('1000ms',
+        animate('550ms',
           keyframes([
             style({ transform: 'rotate(0deg)', offset: '0' }),
             style({ transform: 'rotate(2turn)', offset: '1' })
