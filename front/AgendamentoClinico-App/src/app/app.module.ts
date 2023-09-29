@@ -21,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 
 
 
@@ -30,6 +31,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
+    TelaLoginComponent,
 
 
 
