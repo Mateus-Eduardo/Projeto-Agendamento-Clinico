@@ -17,7 +17,7 @@ import { WeatherApiService } from 'src/app/services/painel/weather-api.service';
       ]),
       transition(':leave', [
         style({ opacity: 2 }),
-        animate('550ms',
+        animate('750ms',
           style({ opacity: 0 })
         )
       ])
