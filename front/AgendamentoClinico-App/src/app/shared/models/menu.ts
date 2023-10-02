@@ -13,8 +13,13 @@ export const menuItems: MenuItem[ ] = [
   },
   {
     routeLink: '/pacientes',
-    icon: '/fa-solid fa-users',
+    icon: '/fa-solid fa-user-injured',
     label: 'Pacientes'
+  },
+  {
+    routeLink: '/medicos',
+    icon: '/fa-solid fa-user-doctor',
+    label: 'Médicos'
   },
   {
     routeLink: '/consultas',
