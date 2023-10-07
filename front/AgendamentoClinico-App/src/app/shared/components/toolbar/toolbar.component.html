@@ -3,27 +3,31 @@
     <a mat-button class="logo">
       <span *ngIf="popText"> {{ menuTitle }} </span>
     </a>
-    <a routerLink="/painel" >
-      <img
-        class="logo-image"
-        src="../../../../assets/logo/_NEWCARD.PNG"
-        alt=""
-      />
+    <a routerLink="/painel">
+      <img class="logo-image" src="../../../../assets/logo/_NEWCARD.PNG" alt="" />
     </a>
 
 
-      <span>{{title}}</span>
+    <span>{{title}}</span>
 
     <div class="content-center">
       <div>
-        <button class="right-button" mat-button [matMenuTriggerFor]="menu">
-          <i class="fa-solid fa-circle-user space-right-icon"></i>
+        <button class="space-right-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>person</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <a href="" mat-menu-item>test</a>
-          <a href="" mat-menu-item>test</a>
-          <a href="" mat-menu-item>test</a>
-          <a href="" mat-menu-item>test</a>
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
         </mat-menu>
       </div>
     </div>
