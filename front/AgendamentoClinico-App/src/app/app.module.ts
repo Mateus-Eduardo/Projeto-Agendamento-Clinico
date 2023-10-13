@@ -16,10 +16,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
-
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { FuncionarioComponent } from './pages/tela-login/funcionario/funcionario.component';
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
 
@@ -32,6 +35,11 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
+    FuncionarioComponent,
+<<<<<<< Updated upstream
+=======
+ 
+>>>>>>> Stashed changes
     
 
 

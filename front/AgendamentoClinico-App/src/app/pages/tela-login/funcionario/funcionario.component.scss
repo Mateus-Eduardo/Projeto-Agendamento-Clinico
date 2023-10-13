@@ -1,0 +1,75 @@
+mat-card {
+<<<<<<< Updated upstream
+    max-width: 400px;
+    padding: 50px; 
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  mat-card-title {
+    text-align: center;
+    color: #666666;
+    text-transform: uppercase; 
+    margin-bottom: 20px;
+    
+  }
+  
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    width: 100%;
+  
+  }
+
+  
+@media screen and (max-width: 600px) {
+    mat-card {
+      max-width: 90%; 
+    }
+    mat-card-title {
+      font-size: 1.2rem;
+    }
+  }
+=======
+  max-width: 400px;
+  padding: 50px; 
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-title {
+  text-align: center;
+  color: #666666;
+  text-transform: uppercase; 
+  margin-bottom: 20px;
+  
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+
+}
+
+@media screen and (max-width: 600px) {
+  mat-card {
+    max-width: 90%; 
+  }
+  mat-card-title {
+    font-size: 1.2rem; 
+  }
+}
+>>>>>>> Stashed changes

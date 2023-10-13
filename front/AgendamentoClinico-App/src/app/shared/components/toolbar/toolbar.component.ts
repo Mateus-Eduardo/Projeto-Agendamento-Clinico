@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,10 +11,6 @@ export class ToolbarComponent {
   @Input() smallScreen = false;
   @Input() title: string = "";
 
-  constructor(private router: Router) {
-  }
-
-  redirectToFuncionarioPage() {
-    this.router.navigate(['/funcionario']);
-  }
+  constructor() {}
+  
 }
