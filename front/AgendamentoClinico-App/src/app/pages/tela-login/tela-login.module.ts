@@ -18,7 +18,6 @@ import { TelaLoginMaterialModule } from 'src/app/shared/Materials/tela-login-mat
   ],
   imports: [
     CommonModule,
-    TelaLoginComponent,
     TelaLoginMaterialModule,
     TelaLoginRoutingModule,
     SharedModule,

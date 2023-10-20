@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'consultas', loadChildren: () => import('./pages/consultas/consultas.module').then(m => m.ConsultasModule) },
   { path: 'pacientes', loadChildren: () => import('./pages/pacientes/pacientes.module').then(m => m.PacientesModule) },
   { path: 'medicos', loadChildren: () => import('./pages/medicos/medicos.module').then(m => m.MedicosModule) },
+  { path: 'tela-login', loadChildren: () => import('./pages/tela-login/tela-login.module').then(m => m.TelaLoginModule) }
 
 
 ];
