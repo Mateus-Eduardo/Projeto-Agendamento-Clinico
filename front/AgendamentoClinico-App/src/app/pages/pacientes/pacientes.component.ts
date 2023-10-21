@@ -14,7 +14,7 @@ export class PacientesComponent implements AfterViewInit {
 
   public dataSource = new MatTableDataSource(DATA_PEOPLE);
 
-  public displayColumns: string[] = ['name', 'cpf', 'address', 'phone'];
+  public displayColumns: string[] = ['name', 'cpf', 'address', 'phone', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -33,6 +33,20 @@ export class PacientesComponent implements AfterViewInit {
     }
   }
 
+  
+  ngOnInit() {
+    
+    
+  }
+
+  editUser(id: number) {
+    //esperando o backend
+  }
+
+  deleteUser(id: number) {
+    //esperando o backend
+  }
 }
 
 
+// this.displayColumns = ['name', 'cpf', 'address', 'phone', 'actions'];
