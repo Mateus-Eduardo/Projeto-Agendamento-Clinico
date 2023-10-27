@@ -33,7 +33,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDividerModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    MatCardModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [],
   providers: [],
