@@ -7,9 +7,12 @@ import { FuncionarioMaterialModule } from 'src/app/shared/Materials/funcionario-
 import { FuncionarioRoutingModule } from './funcionario-routing.module';
 
 
+
+
+
 @NgModule({
   declarations: [
-    FuncionarioComponent 
+    FuncionarioComponent
 
   ],
   imports: [
@@ -20,5 +23,4 @@ import { FuncionarioRoutingModule } from './funcionario-routing.module';
   ]
 })
 export class FuncionarioModule {} 
-
 
