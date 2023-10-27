@@ -18,6 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+
 
 
 
@@ -26,6 +28,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -3,27 +3,33 @@ background {
     margin: 0;
     padding: 0;
   }
-  
+
   .login-card {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
     border-radius: 2px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    img{
+      width: 200px;
+      align-self: center;
+    }
   }
-  
+
   .full-width {
     width: 100%;
     margin-bottom: 20px;
   }
-  
+
   #meuBotao {
     background: linear-gradient(to bottom, #0e6a8e,);
     transition: background 0.3s ease;
   }
-  
+
   #meuBotao:hover {
     background: linear-gradient(to bottom, #0e6a8e, #109bc5);
   }
+
   

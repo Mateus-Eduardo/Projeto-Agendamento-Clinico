@@ -1,53 +1,42 @@
-<<<<<<< Updated upstream
-<mat-grid-list cols="1" rowHeight="2:1">
+
+  <mat-grid-list cols="1" rowHeight="2:1">
     <mat-grid-tile>
       <mat-card>
-        <mat-card-title>Cadastro de Funcionário</mat-card-title>
+        <mat-card-title>Novo Cadastro</mat-card-title>
         <mat-card-content>
           <form>
             <mat-form-field>
-              <input matInput placeholder="Nome" required>
+              <input matInput placeholder="Nome" required />
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="E-mail" type="email" required>
+              <input matInput placeholder="Função" required />
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Cargo" required>
+              <input matInput placeholder="E-mail" type="email" required />
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Senha" type="password" required>
+              <input matInput placeholder="Senha" type="password" required />
             </mat-form-field>
-            <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Confirmar Senha"
+                type="password"
+                required
+              />
+            </mat-form-field>
+            <button class="botao-voltar" mat-raised-button color="access" type="submit">
+              Voltar
+            </button>
+            <button class="botao-Limpar" mat-raised-button color="warn" type="submit">
+              Limpar
+            </button>
+            <button class="botao-cadastrar" mat-raised-button color="primary" type="submit">
+              cadastrar
+            </button>
           </form>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-  
-=======
-      <mat-grid-list cols="1" rowHeight="2:1">
-        <mat-grid-tile>
-            <mat-card>
-                <mat-card-title>Cadastro de Funcionário</mat-card-title>
-                <mat-card-content>
-                  <form>
-                    <mat-form-field>
-                      <input matInput placeholder="Nome" required>
-                    </mat-form-field>
-                    <mat-form-field>
-                      <input matInput placeholder="E-mail" type="email" required>
-                    </mat-form-field>
-                    <mat-form-field>
-                      <input matInput placeholder="Cargo" required>
-                    </mat-form-field>
-                    <mat-form-field>
-                      <input matInput placeholder="Senha" type="password" required>
-                    </mat-form-field>
-                    <button mat-raised-button color="primary" type="submit">Cadastrar</button>
-                  </form>
-                </mat-card-content>
-              </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
-      
->>>>>>> Stashed changes
+

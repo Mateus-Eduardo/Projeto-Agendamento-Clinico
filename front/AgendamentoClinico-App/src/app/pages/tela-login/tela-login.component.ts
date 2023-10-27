@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-tela-login',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./tela-login.component.scss']
 })
 export class TelaLoginComponent {
+  
 
 }
