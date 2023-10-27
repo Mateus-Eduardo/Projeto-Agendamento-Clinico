@@ -2,6 +2,11 @@
   <mat-card-title class="card-title-center">Cadastro de Funcionário</mat-card-title>
   <div class="card-container">
     <div class="column">
+
+<mat-card>
+  <mat-card-title class="card-title-center">Cadastro de Funcionário</mat-card-title>
+  <div class="card-container">
+    <div class="column">
       <mat-card>
         <mat-form-field>
           <input matInput placeholder="Nome" required>
@@ -17,7 +22,41 @@
         <mat-form-field>
           <input matInput placeholder="Senha" type="password" required>
         </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nome" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Data de Nascimento" name="dataNascimento" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="E-mail" type="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Senha" type="password" required>
+        </mat-form-field>
       </mat-card>
+    </div>
+    <div class="column">
+      <mat-card>
+        <mat-form-field>
+          <input matInput placeholder="Cargo" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Endereço" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Telefone" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="CPF" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+      </mat-card>
+    </div>
+  </div>
+</mat-card>
     </div>
     <div class="column">
       <mat-card>
