@@ -5,7 +5,7 @@ import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes.component';
 import { SharedModule } from 'src/app/shared/models/shared.modules';
 import { PacientesMaterialModule } from 'src/app/shared/Materials/pacientes-mat.module';
-import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 
@@ -20,7 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     PacientesRoutingModule,
     PacientesMaterialModule,
     SharedModule,
-    MatPaginatorModule
+    
   ]
 })
 export class PacientesModule {}
