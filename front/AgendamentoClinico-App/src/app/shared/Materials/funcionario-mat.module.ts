@@ -13,24 +13,28 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 
+
 @NgModule({
   exports: [
     MatTabsModule,
     MatIconModule,
+    MatButtonModule,
+    MatButtonModule,
     MatTooltipModule,
-    MatInputModule,
     MatFormFieldModule,
     MatTableModule,
-    MatCardModule,
     MatProgressBarModule,
     MatDividerModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatInputModule,
+    MatCardModule
   ],
   declarations:[],
   providers:[],
   imports: [],
 })
+
 
 export class FuncionarioMaterialModule { }
