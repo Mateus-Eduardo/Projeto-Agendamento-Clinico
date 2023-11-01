@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { EventEmitter, Output } from '@angular/core';
+import { Component, HostListener, EventEmitter, Output } from '@angular/core';
 import { MenuItem } from '../../models/menuItem';
 import { menuItems } from '../../models/menu';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';

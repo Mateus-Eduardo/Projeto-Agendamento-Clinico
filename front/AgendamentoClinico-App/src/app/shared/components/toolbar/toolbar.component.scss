@@ -1,19 +1,17 @@
-.toolbar-menu {
+mat-toolbar-row {
+  align-items: center;
+  text-align: center;
   width: 100%;
   background: #e0e0e0;
   font-size: 1rem;
   top: 0;
   z-index: 1001;
-  box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
-  padding: 15px;
-
-
+  box-shadow: 0.063rem 0 0.2rem 0 #8690a3;
 }
 
 .logo-image{
   width: 140px;
-  margin-left: -5px;
-  margin-top: 25px;
+  margin: 0 auto;
 }
 
 .content-center {
@@ -30,4 +28,5 @@ button{
   font-weight: bolder; 
   font-size:larger;
   color: #0e6a8e;
+  
 }
