@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Input, Component } from '@angular/core';
+import { MenuItem } from '../../models/menuItem';
+import { menuItems } from '../../models/menu';
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+
+  @Input() item!: MenuItem;
+  items_menu: MenuItem[] = menuItems;  
 
 }
