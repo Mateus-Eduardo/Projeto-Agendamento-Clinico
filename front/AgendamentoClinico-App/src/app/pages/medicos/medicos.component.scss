@@ -1,0 +1,58 @@
+.table-pacientes {
+  min-width: 290px;
+  margin: 0 auto;
+  width: 98%;
+
+  mat-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .mat-row:not(.mat-header-row) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .mat-cell {
+      flex-basis: 50%;
+    }
+  }
+}
+
+.paginator {
+  margin: 0 auto;
+  width: 98%;
+}
+
+.form-pesquisar {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 15px;
+  color: #1c2931;
+}
+
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-pesquisar:hover {
+  color: #1c2931;
+}
+
+input {
+  color: #1c2931;
+}
+
+.delete-icon {
+  color: rgb(255, 72, 0);
+}
+
+.edit-icon {
+  color: #0e6a8e;
+}
