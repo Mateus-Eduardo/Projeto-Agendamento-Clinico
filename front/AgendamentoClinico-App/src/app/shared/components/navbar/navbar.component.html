@@ -1,8 +1,22 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
     <div class="toolbar-buttons">
         <button mat-button>Agendamentos</button>
         <button mat-button>Pacientes</button>
-        <button mat-button>Médicos</button> 
-        <button mat-button>Histórico de Consultas</button>         
+        <button mat-button>Médicos</button>
+        <button mat-button>Histórico de Consultas</button>
       </div>
-</mat-toolbar>
+</mat-toolbar> -->
+<div class="navbar">
+  <li class="navbar-nav-item" *ngFor="let item of items_menu">
+    <a class="navbar-nav-link" [routerLink]="[item.routeLink]"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+    >
+      <mat-icon class="navbar-link-icon" fontSet="fa" [ngClass]="item.icon"></mat-icon>
+      <span class="navbar-link-text"> {{ item.label }} </span>
+    </a>
+  </li>
+</div>
+
+
+
