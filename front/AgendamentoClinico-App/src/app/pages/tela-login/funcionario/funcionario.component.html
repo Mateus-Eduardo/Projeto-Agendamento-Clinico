@@ -1,105 +1,49 @@
-<div class="container-geral">  
-    <div class="row mt-6 bg bg-light rounded shadow text-dark pt-5 mt-5">
-      <div class="col-md-15">
-        <form class="p-0">
-          <div class="pb-0 d-block d-md-none">
-            <h3 class="border-bottom text-primary">Cadastro de Usuário</h3>
-          </div>
+<div class="container-geral">
+  <mat-card>
+    <mat-card-title>Novo Cadastro</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput placeholder="Nome" formControlName="nome" required />
+        </mat-form-field>
 
-          <div class="form-row">
-            <div class="form-group col-sm-7">
-              <label>Primeiro Nome</label>
-              <input type="text" class="form-control" formControlName="primeiroNome"
-                placeholder="Insira o primeiro nome" />
-              <div class="invalid-feedback">
-                Nome é obrigatório
-              </div>
-            </div>
+        <mat-form-field>
+          <input
+            matInput
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+            required
+          />
+        </mat-form-field>
 
-            <div class="form-group col-sm-7">
-              <label>Último nome</label>
-              <input type="text" class="form-control" formControlName="ultimoNome" placeholder="Insira o último nome" />
-              <div class="invalid-feedback">
-                Último Nome é obrigatório
-              </div>
-            </div>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Senha"
+            formControlName="senha"
+            required
+          />
+        </mat-form-field>
 
-          </div>
-          <div class="form-group col-sm-7">
-            <label for="">Email:</label>
-            <input class="form-control" formControlName="email" type="text" placeholder="Insira o Nome Completo" />
-            <div class="invalid-feedback">
-              e-mail é obrigatório
-            </div>
-            <div class="invalid-feedback">
-              O e-mail deve ser válido
-            </div>
-          </div>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Confirmar Senha"
+            formControlName="confirmarSenha"
+            required
+          />
+        </mat-form-field>
 
-          <div class="form-group col-sm-7">
-            <label for="">Usuario:</label>
-            <input class="form-control" formControlName="usuario" type="text" placeholder="Insira o nome de Usuário" />
-            <div class="invalid-feedback">
-              Usuário é obrigatório
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-sm-4">
-              <label for="">Senha:</label>
-              <input class="form-control" formControlName="senha" type="password" placeholder="Digite uma Senha" />
-              <div class="invalid-feedback">
-                Senha é obrigatória
-              </div>
-              <div class="invalid-feedback">
-                Deve conter no mínimo 5 caracteres
-              </div>
-            </div>
-
-            <div class="form-group col-sm-4">
-              <label for="">Confirmar Senha:</label>
-              <input class="form-control" formControlName="confirmarSenha" type="password"
-                placeholder="Confirme a Senha" />
-              <div class="invalid-feedback">
-                Confirmar a senha é obrigatório
-              </div>
-              <div class="invalid-feedback">
-                A senha deve ser igual
-              </div>
-
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group col-12">
-              <button class="btn btn-lg btn-warning btn-block px-3">
-                Cadastrar
-              </button>
-            </div>
-          </div>
-          <!-- <div class="form-row">
-            <div class="form-group col-12">
-              <a class="btn btn-link btn-block text-dark" routerLink="/user/login">
-                Já sou Cadastrado
-              </a>
-            </div>
-          </div> -->
-        </form>
-      </div>
-    </div>
-  
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">
+            Cadastrar
+          </button>
+          <button mat-button (click)="limparFormulario()">Limpar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
