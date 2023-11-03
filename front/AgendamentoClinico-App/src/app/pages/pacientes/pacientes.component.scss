@@ -13,9 +13,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    .mat-cell {
-      flex-basis: 50%; 
-    }
+
   }
 }
 
@@ -30,7 +28,6 @@
   align-items: center;
   margin: 0 auto;
   padding-top: 15px;
-  color: #1c2931;
 }
 
 
@@ -38,7 +35,9 @@
 .flex-center {
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+
 }
 
 .form-pesquisar:hover {
