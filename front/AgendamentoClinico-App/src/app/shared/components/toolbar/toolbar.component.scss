@@ -2,7 +2,7 @@ mat-toolbar-row {
   align-items: center;
   text-align: center;
   width: 100%;
-  background: #e0e0e0;
+  background: #f1f1f1;
   font-size: 1rem;
   top: 0;
   z-index: 1001;
@@ -20,13 +20,13 @@ mat-toolbar-row {
   margin-left: auto;
 }
 
-button{
-  margin-top: 20px;
-}
+// button{
+//   margin-top: 5px;
+// }
 
 .space-right-icon {
-  font-weight: bolder; 
+  font-weight: bolder;
   font-size:larger;
   color: #0e6a8e;
-  
+
 }
