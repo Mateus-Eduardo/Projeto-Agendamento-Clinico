@@ -1,11 +1,7 @@
 import { MenuItem } from "./menuItem";
 
 export const menuItems: MenuItem[ ] = [
-  {
-    routeLink: '/painel',
-    icon: '/fa-solid fa-chart-line',
-    label: 'Painel'
-  },
+
   {
     routeLink: '/agendamento',
     icon: '/fa-solid fa-calendar-days',
@@ -29,3 +25,10 @@ export const menuItems: MenuItem[ ] = [
 
 
 ]
+
+
+// {
+//   routeLink: '/painel',
+//   icon: '/fa-solid fa-chart-line',
+//   label: 'Painel'
+// },
