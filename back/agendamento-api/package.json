@@ -1,4 +1,9 @@
 {
+  "main":"server.js",
+  "scripts":{
+    "dev": "nodemon",
+    "start": "node server.js"
+  },
   "devDependencies": {
     "husky": "^8.0.3",
     "nodemon": "^3.0.1"
