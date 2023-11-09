@@ -5,6 +5,7 @@ import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes.component';
 import { SharedModule } from 'src/app/shared/models/shared.modules';
 import { PacientesMaterialModule } from 'src/app/shared/Materials/pacientes-mat.module';
+import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacientes.component';
 
 
 
@@ -12,7 +13,8 @@ import { PacientesMaterialModule } from 'src/app/shared/Materials/pacientes-mat.
 
 @NgModule({
   declarations: [
-    PacientesComponent
+    PacientesComponent,
+    CadastroPacientesComponent
 
   ],
   imports: [

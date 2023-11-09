@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -24,7 +26,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
+    MatCardModule 
+    
 
 
 

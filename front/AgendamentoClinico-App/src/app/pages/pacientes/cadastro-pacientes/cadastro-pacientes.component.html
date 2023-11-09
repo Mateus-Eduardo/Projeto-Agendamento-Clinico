@@ -1,0 +1,33 @@
+<div class="container-geral">
+    <mat-card>
+      <mat-card-title>Novo Cadastro</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="nome"  />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="CPF" formControlName="cpf"  />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="Endereço" formControlName="endereco"  />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="Cidade" formControlName="cidade"  />
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" type="submit">
+            Cadastrar
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="Cancelar()">Cancelar</button>
+  </div>
+  
