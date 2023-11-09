@@ -1,0 +1,17 @@
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+// ==> Rotas da API
+const index = require('./routes/index');
+const pacienteRoute = require('./routes/paciente.routes');
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
+
+app.use(index);
+app.use('/api/', pacienteRoute);
+
+module.exports = app;
