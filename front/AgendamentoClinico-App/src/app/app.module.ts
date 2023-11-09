@@ -23,12 +23,14 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
     NavbarComponent,
+
 
   ],
   imports: [

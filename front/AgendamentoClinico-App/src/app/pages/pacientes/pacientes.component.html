@@ -4,8 +4,10 @@
     </button> -->
 </app-toolbar-title>
 
+
 <mat-form-field class="form-pesquisar">
   <mat-label>Buscar</mat-label>
+
   <input
     matInput
     class="input-style"
@@ -14,13 +16,14 @@
     #input
   />
 </mat-form-field>
-
+<button mat-raised-button (click)="AddPaciente()"><mat-icon>add</mat-icon>Adicionar Paciente</button>
 <div class="table-pacientes">
   <mat-table
     class="mat-elevation-z4"
     [dataSource]="dataSource"
     matSort
   >
+  
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef mat-sort-header>
       Nome
@@ -70,11 +73,13 @@
     <mat-row *matRowDef="let person; columns: displayColumns"></mat-row>
   </mat-table>
 </div>
-
 <mat-paginator
   class="paginator mat-elevation-z4"
   [pageSize]="10"
   [pageSizeOptions]="[5, 10, 25]"
 ></mat-paginator>
+
+
+
 
 <router-outlet></router-outlet>
