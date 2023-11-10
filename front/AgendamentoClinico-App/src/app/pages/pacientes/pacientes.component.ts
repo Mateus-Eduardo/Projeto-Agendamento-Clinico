@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DATA_PEOPLE } from './model/data-people';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -6,11 +7,14 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacientes.component';
 
+
 @Component({
   selector: 'app-pacientes',
   templateUrl: './pacientes.component.html',
   styleUrls: ['./pacientes.component.scss']
 })
+
+
 
 export class PacientesComponent implements AfterViewInit {
 
@@ -18,7 +22,19 @@ export class PacientesComponent implements AfterViewInit {
 
   public displayColumns: string[] = ['name', 'cpf', 'address', 'phone', 'city', 'actions'];
 
-  constructor (public dialog: MatDialog) {}
+  public cadastroForm: FormGroup;
+
+  constructor(public dialog: MatDialog, private fb: FormBuilder) {
+
+    this.cadastroForm = this.fb.group({
+      nome: ['', Validators.required],
+      cpf: ['', [Validators.required]],
+      endereco: ['', Validators.required],
+      cidade: ['', Validators.required]
+    });
+  }
+
+  
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -38,31 +54,39 @@ export class PacientesComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-
-
   }
+
   AddPaciente(): void {
     const dialogRef = this.dialog.open(CadastroPacientesComponent, {
-      width: '250px'
+      width: '60%',
+      disableClose: true,
+      data: { cadastroForm: this.cadastroForm }
+      
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-    
     });
   }
-  
 
   editUser(id: number) {
-    //esperando o backend
+    // Esperando o backend
   }
 
   deleteUser(id: number) {
-    //esperando o backend
+    // Esperando o backend
   }
 
   
+  onSubmit() {
+    if (this.cadastroForm.valid) {
+      // Processar o formulário e enviar os dados
+      console.log('Formulário válido:', this.cadastroForm.value);
+    }
+  }
 
-
+  // Adicione o método limparFormulario para limpar o formulário
+  limparFormulario() {
+    this.cadastroForm.reset();
+  }
 }
-
