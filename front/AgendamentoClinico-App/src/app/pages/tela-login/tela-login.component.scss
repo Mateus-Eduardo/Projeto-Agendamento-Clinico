@@ -1,35 +1,39 @@
-background {
-    background: linear-gradient(to bottom, #0e6a8e, #ffffff);
-    margin: 0;
-    padding: 0;
+.login-card {
+  max-width: 350px;
+  margin: 100px auto;
+  
+
+  background-color: rgb(255, 255, 255);
+
+  mat-card-title {
+    
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #0e6a8e;
+    text-align: center;
+    
+  } 
+  img{
+    width: 250px;
+    align-self: center;
+    padding-top: 25px;
   }
-
-  .login-card {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    border-radius: 2px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-    img{
-      width: 200px;
-      align-self: center;
-    }
-  }
-
   .full-width {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  #meuBotao {
-    background: linear-gradient(to bottom, #0e6a8e,);
-    transition: background 0.3s ease;
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
   }
 
-  #meuBotao:hover {
-    background: linear-gradient(to bottom, #0e6a8e, #109bc5);
-  }
+  .botao-login{
+    background-color: #0e6a8e;
+    color: #fff;
 
-  
+  }
+}
