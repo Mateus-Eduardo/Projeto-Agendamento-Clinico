@@ -90,15 +90,21 @@
     position: fixed;
   }
 
-  .form-cadastro{
-    width: 49%;
+  .form-cadastro-telefone{
+    width: 44%;
+  }
+  .form-cadastro-celular{
+    width: 55%;
+  }
+  .form-cadastro-cpf{
+    width: 75%;
   }
 
   .form-cadastro-ender{
-    width: 58%;
+    width: 64%;
   }
 
   .form-cadastro-cid{
-    width: 40%;
+    width: 35%;
   }
 }
