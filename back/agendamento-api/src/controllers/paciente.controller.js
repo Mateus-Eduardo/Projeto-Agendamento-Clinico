@@ -16,25 +16,24 @@ exports.createPaciente = async (req, res) => {
     const {
       nome_paciente,
       cpf_paciente,
-      rg_paciente,
       cidade_paciente,
       telefone_paciente,
-      celular_paciente
+      celular_paciente,
+      endereco_paciente
     } = req.body;
 
     // Ajuste para remover caracteres não numéricos e limitar o comprimento
-    const cpfSanitized = sanitizeString(cpf_paciente);
-    const rgSanitized = sanitizeString(rg_paciente);
+    const cpfSanitized = sanitizeString(cpf_paciente);    
 
     const { rows } = await db.query(
-      "INSERT INTO paciente (nome_paciente, cpf_paciente, rg_paciente, cidade_paciente, telefone_paciente, celular_paciente) VALUES ($1, $2, $3, $4, $5, $6)",
+      "INSERT INTO paciente (nome_paciente, cpf_paciente, cidade_paciente, telefone_paciente, celular_paciente, endereco_paciente) VALUES ($1, $2, $3, $4, $5, $6)",
       [
         nome_paciente,
         truncateString(cpfSanitized, 11), // Limita o CPF a 11 caracteres
-        truncateString(rgSanitized, 11),  // Limita o RG a 11 caracteres
         cidade_paciente,
         telefone_paciente,
-        celular_paciente
+        celular_paciente,
+        endereco_paciente
       ]
     );
 
@@ -44,10 +43,10 @@ exports.createPaciente = async (req, res) => {
         paciente: {
           nome_paciente,
           cpf_paciente: truncateString(cpfSanitized, 11),
-          rg_paciente: truncateString(rgSanitized, 11),
           cidade_paciente,
           telefone_paciente,
-          celular_paciente
+          celular_paciente,
+          endereco_paciente
         }
       }
     });
@@ -76,11 +75,11 @@ exports.findPacienteById = async (req, res) => {
 //=> Método responsável por atualizar um determinado 'Paciente' por Id: PUT Id
 exports.UpdatePacienteById = async (req, res) => {
   const pacienteId = req.params.id;
-  const { nome_paciente, cpf_paciente, rg_paciente, cidade_paciente, telefone_paciente, celular_paciente } = req.body;
+  const { nome_paciente, cpf_paciente, cidade_paciente, telefone_paciente, celular_paciente, endereco_paciente } = req.body;
 
   const response = await db.query( 
-    'UPDATE paciente SET nome_paciente=$1, cpf_paciente=$2, rg_paciente=$3, cidade_paciente=$4, telefone_paciente=$5, celular_paciente=$6 WHERE id_paciente = $7',
-    [nome_paciente, cpf_paciente, rg_paciente, cidade_paciente, telefone_paciente, celular_paciente, pacienteId]
+    'UPDATE paciente SET nome_paciente=$1, cpf_paciente=$2, cidade_paciente=$3, telefone_paciente=$4, celular_paciente=$5, endereco_paciente=$6 WHERE id_paciente = $7',
+    [nome_paciente, cpf_paciente, cidade_paciente, telefone_paciente, celular_paciente, endereco_paciente, pacienteId]
     );
 
     res.status(200).send({message: 'Paciente atualizado com sucesso'});
