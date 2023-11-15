@@ -12,7 +12,13 @@
   .mat-row:not(.mat-header-row) {
     display: flex;
     flex-wrap: wrap;
+  }
 
+  .botao-adicionar{
+    background-color: #26ff00;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
 
   }
 }
@@ -30,14 +36,11 @@
   padding-top: 15px;
 }
 
-
-
 .flex-center {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
   font-weight: 500;
-
 }
 
 .form-pesquisar:hover {

@@ -3,19 +3,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
-
 @Component({
-  selector: 'app-cadastro-pacientes',
-  templateUrl: './cadastro-pacientes.component.html',
-  styleUrls: ['./cadastro-pacientes.component.scss']
+  selector: 'app-cadastro-medicos',
+  templateUrl: './cadastro-medicos.component.html',
+  styleUrls: ['./cadastro-medicos.component.scss']
 })
-export class CadastroPacientesComponent {
+export class CadastroMedicosComponent {
   cadastroForm: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<CadastroPacientesComponent>
+    public dialogRef: MatDialogRef<CadastroMedicosComponent>
   ) {
     this.cadastroForm = data.cadastroForm;
   }
@@ -34,3 +33,4 @@ export class CadastroPacientesComponent {
     }
   }
 }
+
