@@ -84,5 +84,12 @@ exports.UpdatePacienteById = async (req, res) => {
     );
 
     res.status(200).send({message: 'Paciente atualizado com sucesso'});
+}
 
+//=> Método responsável por deletar um determinado 'Paciente' por Id: DELETE Id
+exports.deletePacienteById  = async (req, res) => {
+  const pacienteId = req.params.id;
+  await db.query('DELETE FROM paciente WHERE id_paciente = $1', [pacienteId]);
+
+  res.status(200).send({message: 'Paciente deletado com sucesso!!'});
 }

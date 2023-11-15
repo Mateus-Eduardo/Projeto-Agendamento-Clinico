@@ -17,8 +17,8 @@ router.get('/pacientes/:id', pacienteController.findPacienteById);
 // = > Rota responsável por atualizar um determinado pacientes por Id: (PUT): localhost:3000/api/pacientes/Id
 router.put('/pacientes/:id', pacienteController.UpdatePacienteById);
 
-// // = > Rota responsável por deletar/excluir um determinado pacientes por Id: (PUT): localhost:3000/api/pacientes/Id
-// router.delete('/pacientes/:id', pacienteController.deletePacienteById);
+// = > Rota responsável por deletar/excluir um determinado pacientes por Id: (PUT): localhost:3000/api/pacientes/Id
+router.delete('/pacientes/:id', pacienteController.deletePacienteById);
 
 
 module.exports = router;
