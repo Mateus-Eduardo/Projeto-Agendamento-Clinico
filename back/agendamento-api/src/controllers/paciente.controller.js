@@ -64,3 +64,25 @@ exports.listAllPacientes = async (req, res) => {
     const response = await db.query('SELECT * FROM paciente ORDER BY nome_paciente ASC');
     res.status(200).send(response.rows);
   };
+
+
+//=> Método responsável por listar um determinado 'Paciente' por Id: GET Id
+exports.findPacienteById = async (req, res) => {
+  const pacienteId = req.params.id;
+  const response = await db.query('SELECT * FROM paciente WHERE id_paciente = $1', [pacienteId]);
+  res.status(200).send(response.rows);
+}
+
+//=> Método responsável por atualizar um determinado 'Paciente' por Id: PUT Id
+exports.UpdatePacienteById = async (req, res) => {
+  const pacienteId = req.params.id;
+  const { nome_paciente, cpf_paciente, rg_paciente, cidade_paciente, telefone_paciente, celular_paciente } = req.body;
+
+  const response = await db.query( 
+    'UPDATE paciente SET nome_paciente=$1, cpf_paciente=$2, rg_paciente=$3, cidade_paciente=$4, telefone_paciente=$5, celular_paciente=$6 WHERE id_paciente = $7',
+    [nome_paciente, cpf_paciente, rg_paciente, cidade_paciente, telefone_paciente, celular_paciente, pacienteId]
+    );
+
+    res.status(200).send({message: 'Paciente atualizado com sucesso'});
+
+}
