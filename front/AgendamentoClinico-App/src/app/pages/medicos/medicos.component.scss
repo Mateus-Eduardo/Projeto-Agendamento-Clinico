@@ -25,6 +25,7 @@
 
 .paginator {
   margin: 0 auto;
+  margin-bottom: 25px;
   width: 98%;
 }
 
@@ -34,15 +35,13 @@
   align-items: center;
   margin: 0 auto;
   padding-top: 15px;
-  color: #1c2931;
 }
-
-
 
 .flex-center {
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .form-pesquisar:hover {
@@ -59,4 +58,16 @@ input {
 
 .edit-icon {
   color: #0e6a8e;
+  margin: 15px;
+  transition: color 0.3s; 
+}
+
+.edit-icon:hover {
+  color: #ff9900; 
+}
+
+
+.botao-usario{
+  background-color: #0e6a8e;
+  
 }
