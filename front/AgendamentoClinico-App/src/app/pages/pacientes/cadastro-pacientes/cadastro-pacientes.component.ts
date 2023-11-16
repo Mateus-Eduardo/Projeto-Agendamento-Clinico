@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 
 
@@ -10,14 +11,27 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./cadastro-pacientes.component.scss']
 })
 export class CadastroPacientesComponent {
-  cadastroForm: FormGroup;
+
+  cadastroPacienteForm: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<CadastroPacientesComponent>
+    public dialogRef: MatDialogRef<CadastroPacientesComponent>,
+    private formBuilder: FormBuilder
   ) {
-    this.cadastroForm = data.cadastroForm;
+    this.cadastroPacienteForm = data.cadastroPacienteForm;
+    this.createForm();
+  }
+
+  createForm(){
+    this.cadastroPacienteForm = this.formBuilder.group({
+      nome_paciente: ['', Validators.required],
+      cpf_paciente: ['', Validators.required],
+      endereco_paciente: ['', Validators.required],
+      celular_paciente: ['', Validators.required]
+    })
+
   }
 
   ngOnInit(): void {
@@ -28,9 +42,9 @@ export class CadastroPacientesComponent {
   }
 
   onSubmit() {
-    if (this.cadastroForm.valid) {
+    if (this.cadastroPacienteForm.valid) {
       // Processar o formulário e enviar os dados
-      console.log('Formulário válido:', this.cadastroForm.value);
+      console.log('Formulário válido:', this.cadastroPacienteForm.value);
     }
   }
 }
