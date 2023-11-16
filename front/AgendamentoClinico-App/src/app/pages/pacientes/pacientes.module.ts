@@ -6,6 +6,7 @@ import { PacientesComponent } from './pacientes.component';
 import { SharedModule } from 'src/app/shared/models/shared.modules';
 import { PacientesMaterialModule } from 'src/app/shared/Materials/pacientes-mat.module';
 import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacientes.component';
+import { EditarPacientesComponent } from './cadastro-pacientes/editar-pacientes.component';
 
 
 
@@ -14,7 +15,8 @@ import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacien
 @NgModule({
   declarations: [
     PacientesComponent,
-    CadastroPacientesComponent
+    CadastroPacientesComponent,
+    EditarPacientesComponent
 
   ],
   imports: [
