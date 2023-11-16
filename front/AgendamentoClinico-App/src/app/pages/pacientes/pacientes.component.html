@@ -59,9 +59,7 @@
 
       </mat-header-cell>
       <mat-cell *matCellDef="let person">
-        <button mat-icon-button (click)="editUser(person.id)">
-          <mat-icon class="edit-icon">edit</mat-icon>
-        </button>
+          <mat-icon class="edit-icon"(click)="EditarUsuario()" >edit</mat-icon>
         <button mat-icon-button (click)="deleteUser(person.id)">
           <mat-icon class="delete-icon">delete_outline</mat-icon>
         </button>

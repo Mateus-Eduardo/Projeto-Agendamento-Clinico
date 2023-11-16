@@ -58,4 +58,16 @@ input {
 
 .edit-icon {
   color: #0e6a8e;
+  margin: 15px;
+  transition: color 0.3s; 
+}
+
+.edit-icon:hover {
+  color: #ff9900; 
+}
+
+
+.botao-usario{
+  background-color: #0e6a8e;
+  
 }
