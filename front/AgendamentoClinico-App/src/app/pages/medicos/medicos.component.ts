@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.component';
+import { editarMedicosComponent } from './cadastro-medicos/editar-medicos.component';
 
 
 @Component({
@@ -55,16 +56,29 @@ export class MedicosComponent implements AfterViewInit {
 
   AddMedico(): void {
     const dialogRef = this.dialog.open(CadastroMedicosComponent, {
-      width: '55%',
+      width: '40%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      // Add any additional logic here after the dialog is closed
     });
   }
-  
+
+  EditarUsuario(): void {
+    const dialogRef = this.dialog.open(editarMedicosComponent, {
+      width: '40%',
+      disableClose: true,
+      data: { cadastroForm: this.cadastroForm }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Add any additional logic here after the dialog is closed
+    });
+  }
 
   editUser(id: number) {
     //esperando o backend

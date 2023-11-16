@@ -1,12 +1,13 @@
-
-<app-toolbar-title title="Medicos" icon="fa-regular fa-calendar">
+<app-toolbar-title title="Medicos" icon="fa-solid fa-users">
   <!-- <button mat-icon-button>
-        <mat-icon>Painel</mat-icon>
-      </button> -->
+      <mat-icon>Painel</mat-icon>
+    </button> -->
 </app-toolbar-title>
+
 
 <mat-form-field class="form-pesquisar">
   <mat-label>Buscar</mat-label>
+
   <input
     matInput
     class="input-style"
@@ -17,17 +18,22 @@
 </mat-form-field>
 
 <div class="table-medicos">
-  <mat-table class="mat-elevation-z4" [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
-        Nome
-      </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.name }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="cpf">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> CPF </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.cpf }} </mat-cell>
-    </ng-container>
+  <mat-table
+    class="mat-elevation-z4"
+    [dataSource]="dataSource"
+    matSort
+  >
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>
+      Nome
+    </mat-header-cell>
+    <mat-cell *matCellDef="let person"> {{ person.name }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="cpf">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> CPF </mat-header-cell>
+    <mat-cell *matCellDef="let person"> {{ person.cpf }} </mat-cell>
+  </ng-container>
     <ng-container matColumnDef="address">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Endereço
@@ -47,17 +53,13 @@
       <mat-cell *matCellDef="let person"> {{ person.city }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="actions">
-      
       <mat-header-cell *matHeaderCellDef>
+
         <button class="botao-adicionar" mat-raised-button (click)="AddMedico()"><mat-icon>add</mat-icon>Novo</button>
+
       </mat-header-cell>
-
       <mat-cell *matCellDef="let person">
-
-        
-        <button mat-icon-button (click)="editUser(person.id)">
-          <mat-icon class="edit-icon">edit</mat-icon>
-        </button>
+          <mat-icon class="edit-icon"(click)="EditarUsuario()" >edit</mat-icon>
         <button mat-icon-button (click)="deleteUser(person.id)">
           <mat-icon class="delete-icon">delete_outline</mat-icon>
         </button>
@@ -73,11 +75,13 @@
     <mat-row *matRowDef="let person; columns: displayColumns"></mat-row>
   </mat-table>
 </div>
-
 <mat-paginator
   class="paginator mat-elevation-z4"
   [pageSize]="10"
   [pageSizeOptions]="[5, 10, 25]"
 ></mat-paginator>
+
+
+
 
 <router-outlet></router-outlet>

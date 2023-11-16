@@ -30,15 +30,17 @@
               />
           </mat-form-field>
         </p>
-      </div>
 
-      <div class="content-forms">
         <p class="form-cadastro-telefone">
           <mat-form-field appearance="fill">
             <mat-label for="telefone_paciente"> Telefone </mat-label>
             <input matInput placeholder="Telefone Residencial" />
           </mat-form-field>
         </p>
+      </div>
+
+      <div class="content-forms">
+      
 
         <p class="form-cadastro-celular">
           <mat-form-field appearance="fill">
@@ -49,6 +51,14 @@
               formControlName="celular_paciente"
               #celular_paciente
             />
+          </mat-form-field>
+        </p>
+
+        
+        <p class="form-cadastro-cid">
+          <mat-form-field appearance="fill">
+            <mat-label for="cidade_paciente"> Cidade </mat-label>
+            <input matInput placeholder="Cidade" />
           </mat-form-field>
         </p>
       </div>
@@ -67,12 +77,6 @@
           </mat-form-field>
         </p>
 
-        <p class="form-cadastro-cid">
-          <mat-form-field appearance="fill">
-            <mat-label for="cidade_paciente"> Cidade </mat-label>
-            <input matInput placeholder="Cidade" />
-          </mat-form-field>
-        </p>
       </div>
 
       <div class="button-container">
