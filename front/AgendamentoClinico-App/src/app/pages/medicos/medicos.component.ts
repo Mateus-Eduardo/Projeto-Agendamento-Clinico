@@ -1,8 +1,11 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { DATA_PEOPLE } from './model/data-people';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.component';
 
 
 @Component({
@@ -10,11 +13,24 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './medicos.component.html',
   styleUrls: ['./medicos.component.scss']
 })
-export class MedicosComponent {
+export class MedicosComponent implements AfterViewInit {
 
   public dataSource = new MatTableDataSource(DATA_PEOPLE);
 
   public displayColumns: string[] = ['name', 'cpf', 'address', 'phone', 'city', 'actions'];
+
+  public cadastroForm: FormGroup;
+
+  constructor(public dialog: MatDialog, private fb: FormBuilder) {
+
+    this.cadastroForm = this.fb.group({
+      nome: ['', Validators.required],
+      cpf: ['', [Validators.required]],
+      endereco: ['', Validators.required],
+      cidade: ['', Validators.required]
+      
+    });
+  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -35,8 +51,20 @@ export class MedicosComponent {
 
   ngOnInit() {
 
-
   }
+
+  AddMedico(): void {
+    const dialogRef = this.dialog.open(CadastroMedicosComponent, {
+      width: '55%',
+      disableClose: true,
+      data: { cadastroForm: this.cadastroForm }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  
 
   editUser(id: number) {
     //esperando o backend
