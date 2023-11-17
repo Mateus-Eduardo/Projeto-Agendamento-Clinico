@@ -15,11 +15,25 @@
   }
 
   .botao-adicionar{
-    background-color: #26ff00;
+    background-color: #21db00;
     text-transform: uppercase;
     color: #fff;
     text-shadow: 1px 1px 2px black;
 
+  }
+
+  .delete-icon {
+    color: rgb(255, 72, 0);
+  }
+  
+  .edit-icon {
+    color: #0e6a8e;    
+       
+  }  
+  
+  .botao-usario{
+    background-color: #0e6a8e;
+    
   }
 }
 
@@ -52,22 +66,3 @@ input {
   color: #1c2931;
 }
 
-.delete-icon {
-  color: rgb(255, 72, 0);
-}
-
-.edit-icon {
-  color: #0e6a8e;
-  margin: 15px;
-  transition: color 0.3s; 
-}
-
-.edit-icon:hover {
-  color: #ff9900; 
-}
-
-
-.botao-usario{
-  background-color: #0e6a8e;
-  
-}

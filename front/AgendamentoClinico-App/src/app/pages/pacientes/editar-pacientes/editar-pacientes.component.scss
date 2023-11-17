@@ -1,4 +1,4 @@
-  .container-geral {
+.container-geral {
     margin: 0 auto; 
     width: 100%;
     max-height: 76vh;
@@ -52,63 +52,44 @@
       margin: 8px 0;
     }
   
-    .form-cadastro-cpf{
-      width: 42%;
+    .content-forms{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
   
-    .form-cadastro-email{
-      width: 55%;
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      margin-bottom: 20px;
+  
     }
-
-    .form-cadastro-especialidade{
-      width: 55%;
+  
+    button {
+      margin-left: 8px;
+      text-transform: uppercase;
     }
-    .form-cadastro-endereco{
-      width: 55%;
+  
+    .botao-cadastro {
+      background-color: #0e6a8e;
+      color: #fff;
     }
-    .form-cadastro-celular{
-      width: 48.4%;
+  
+    .botao-cadastrar{
+      background-color: #0e6a8e;
+      color: #fff;
     }
-    .form-cadastro-telefone{
-      width: 48.4%;
+  
+    .botao-sair {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 16px;
+      position: fixed;
     }
-
-
-  
-  }
-  .botao-cadastro {
-    background-color: #0e6a8e;
-    color: #fff;
+    .form-cadastro-ender{
+      width: 100%;
+    }
   }
   
-  .botao-cadastrar{
-    background-color: #0e6a8e;
-    color: #fff;
-  }
-  
-  .botao-sair {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 16px;
-    position: fixed;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
-  
-  }
-  .content-forms{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  
-  button {
-    margin-left: 8px;
-    text-transform: uppercase;
-  }

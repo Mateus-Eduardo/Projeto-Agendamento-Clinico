@@ -6,7 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacientes.component';
-import { EditarPacientesComponent } from './cadastro-pacientes/editar-pacientes.component';
+import { EditarPacientesComponent } from './editar-pacientes/editar-pacientes.component';
 
 
 @Component({

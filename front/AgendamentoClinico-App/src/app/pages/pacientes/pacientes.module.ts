@@ -6,7 +6,7 @@ import { PacientesComponent } from './pacientes.component';
 import { SharedModule } from 'src/app/shared/models/shared.modules';
 import { PacientesMaterialModule } from 'src/app/shared/Materials/pacientes-mat.module';
 import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacientes.component';
-import { EditarPacientesComponent } from './cadastro-pacientes/editar-pacientes.component';
+import { EditarPacientesComponent } from './editar-pacientes/editar-pacientes.component';
 
 
 
