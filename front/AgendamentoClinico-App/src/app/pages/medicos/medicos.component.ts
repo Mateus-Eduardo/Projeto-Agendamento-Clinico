@@ -6,7 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.component';
-import { editarMedicosComponent } from './cadastro-medicos/editar-medicos.component';
+import { EditarMedicosComponent } from './editar-medicos/editar-medicos.component';
 
 
 @Component({
@@ -68,7 +68,7 @@ export class MedicosComponent implements AfterViewInit {
   }
 
   EditarUsuario(): void {
-    const dialogRef = this.dialog.open(editarMedicosComponent, {
+    const dialogRef = this.dialog.open(EditarMedicosComponent, {
       width: '40%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }

@@ -7,13 +7,13 @@ import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.co
 import { MedicosComponent } from './medicos.component';
 import { MatIconModule } from '@angular/material/icon';  
 import { MatCardModule } from '@angular/material/card';
-import { editarMedicosComponent } from './cadastro-medicos/editar-medicos.component';
+import { EditarMedicosComponent } from './editar-medicos/editar-medicos.component';
 
 @NgModule({
   declarations: [
     MedicosComponent,
     CadastroMedicosComponent,
-    editarMedicosComponent,
+    EditarMedicosComponent,
   ],
   imports: [
     CommonModule,
