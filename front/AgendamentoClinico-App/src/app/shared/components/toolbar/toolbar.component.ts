@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
+import { FuncionarioComponent } from 'src/app/pages/funcionario/funcionario.component';
+import { EditarUsuarioComponent } from 'src/app/pages/funcionario/editar-funcionario/editar-funcionario.component';
+import { CadastroFuncionarioComponent } from 'src/app/pages/funcionario/cadastro-funcionario/cadastro-funcionario.component';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -10,7 +13,38 @@ export class ToolbarComponent {
   @Input() menuTitle = '';
   @Input() smallScreen = false;
   @Input() title: string = "";
+  cadastroForm: any;
+  dialogRef: any;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
+  
+  AdicionarUsuario(): void {
+    const dialogRef = this.dialog.open(CadastroFuncionarioComponent, {
+      width: '40%',
+      disableClose: true,
+      data: { cadastroForm: this.cadastroForm }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Add any additional logic here after the dialog is closed
+    });
+  }
+  EditarUsuario(): void {
+    const dialogRef = this.dialog.open(EditarUsuarioComponent, {
+      width: '40%',
+      disableClose: true,
+      data: { cadastroForm: this.cadastroForm }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Add any additional logic here after the dialog is closed
+    });
+  }
+  sair(): void {
+    this.dialogRef.close();
+  }
+
   
 }

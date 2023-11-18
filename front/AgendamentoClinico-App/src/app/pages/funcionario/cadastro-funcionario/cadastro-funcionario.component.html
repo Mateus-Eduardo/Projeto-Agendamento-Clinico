@@ -1,0 +1,54 @@
+<p>cadastro-funcionario works!</p>
+<div class="container-geral">
+    <button mat-icon-button class="fechar" (click)="sair()">
+      <mat-icon aria-label="Fechar">close</mat-icon>
+    </button>
+    <mat-card>
+      <mat-card-title>Cadastrar Funcionario</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="nome" required />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input
+              matInput
+              type="email"
+              placeholder="Email"
+              formControlName="email"
+              required
+            />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input
+              matInput
+              type="password"
+              placeholder="Senha"
+              formControlName="senha"
+              required
+            />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input
+              matInput
+              type="password"
+              placeholder="Confirmar Senha"
+              formControlName="confirmarSenha"
+              required
+            />
+          </mat-form-field>
+  
+          <div class="button-container">
+            <button mat-raised-button class="botao-cadastro" type="submit">
+              Cadastrar
+            </button>
+            <button mat-button (click)="limparFormulario()">Limpar</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
