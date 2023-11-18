@@ -6,13 +6,17 @@
   <mat-card-content>
     <form>
       <mat-form-field>
-        <mat-label class="label-email">DIgite um email</mat-label>
+        <mat-label class="label-email">Digite um email</mat-label>
         <input matInput placeholder="email@exemplo.com" [formControl]="email" required>
         <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Senha" type="password">
+      <mat-form-field>
+        <mat-label>Digite a Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
       </mat-form-field>
 
       <div class="button-container">

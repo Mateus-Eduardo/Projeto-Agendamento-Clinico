@@ -10,7 +10,9 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class TelaLoginComponent {
 
+  hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
+  senha = new FormControl('', [Validators.required]);
 
 
   getErrorMessage() {
@@ -20,6 +22,8 @@ export class TelaLoginComponent {
 
     return this.email.hasError('email') ? 'Esse não é um e-mail válido' : '';
   }
+
+  
   
 
 }
