@@ -1,25 +1,32 @@
 .login-card {
   max-width: 350px;
   margin: 100px auto;
-  
+
 
   background-color: rgb(255, 255, 255);
 
   mat-card-title {
-    
+
     margin-top: 25px;
     margin-bottom: 25px;
     text-transform: uppercase;
     font-size: 1.2rem;
     color: #0e6a8e;
     text-align: center;
-    
-  } 
-  img{
+
+  }
+  mat-form-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  img {
     width: 250px;
     align-self: center;
     padding-top: 25px;
   }
+
   .full-width {
     width: 100%;
     margin-bottom: 20px;
@@ -27,11 +34,34 @@
 
   .button-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 16px;
   }
 
-  .botao-login{
+  .novo-cadastro {
+    margin: 0 auto;
+    padding-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    color: #109bc5;
+    font-size: 0.8rem;
+  }
+
+  .novo-cadastro:hover {
+    font-size: 0.82rem;
+    transition: 0.5s;
+  }
+
+  .senha-cadastro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+  .botao-login {
     background-color: #0e6a8e;
     color: #fff;
 

@@ -5,8 +5,10 @@
   
   <mat-card-content>
     <form>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Usuário" type="text">
+      <mat-form-field>
+        <mat-label class="label-email">DIgite um email</mat-label>
+        <input matInput placeholder="email@exemplo.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
 
       <mat-form-field class="full-width">
@@ -17,6 +19,17 @@
         <button mat-raised-button class="botao-login" type="submit">
           ENTRAR
         </button>
+      </div>
+
+      <div class="senha-cadastro"> 
+        
+        <a  class="novo-cadastro" routerLink="">
+          Esqueceu a senha? 
+        </a>
+        
+        <a class="novo-cadastro" routerLink="">
+          Novo Cadastro
+        </a>
 
       </div>
     </form>
