@@ -7,14 +7,14 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './editar-funcionario.component.html',
   styleUrls: ['./editar-funcionario.component.scss']
 })
-export class EditarUsuarioComponent {
+export class EditarFuncionarioComponent {
 
   cadastroForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public dialogRef: MatDialogRef<EditarUsuarioComponent>
+    public dialogRef: MatDialogRef<EditarFuncionarioComponent>
   ) {
     this.cadastroForm = this.fb.group({
       nome: ['', Validators.required],

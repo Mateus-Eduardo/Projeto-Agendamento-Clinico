@@ -66,11 +66,11 @@ export class PacientesComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // Add any additional logic here after the dialog is closed
+    
     });
   }
 
-  EditarUsuario(): void {
+  EditarPaciente(): void {
     const dialogRef = this.dialog.open(EditarPacientesComponent, {
       width: '40%',
       disableClose: true,
@@ -79,27 +79,27 @@ export class PacientesComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // Add any additional logic here after the dialog is closed
+      
     });
   }
 
   editUser(id: number) {
-    // Esperando o backend
+    
   }
 
   deleteUser(id: number) {
-    // Esperando o backend
+   
   }
 
   
   onSubmit() {
     if (this.cadastroForm.valid) {
-      // Processar o formulário e enviar os dados
+     
       console.log('Formulário válido:', this.cadastroForm.value);
     }
   }
 
-  // Adicione o método limparFormulario para limpar o formulário
+  
   limparFormulario() {
     this.cadastroForm.reset();
   }

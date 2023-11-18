@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FuncionarioComponent } from 'src/app/pages/funcionario/funcionario.component';
-import { EditarUsuarioComponent } from 'src/app/pages/funcionario/editar-funcionario/editar-funcionario.component';
+import { EditarFuncionarioComponent } from 'src/app/pages/funcionario/editar-funcionario/editar-funcionario.component';
 import { CadastroFuncionarioComponent } from 'src/app/pages/funcionario/cadastro-funcionario/cadastro-funcionario.component';
 @Component({
   selector: 'app-toolbar',
@@ -20,7 +20,7 @@ export class ToolbarComponent {
   
   AdicionarUsuario(): void {
     const dialogRef = this.dialog.open(CadastroFuncionarioComponent, {
-      width: '40%',
+      width: '46%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
@@ -31,8 +31,8 @@ export class ToolbarComponent {
     });
   }
   EditarUsuario(): void {
-    const dialogRef = this.dialog.open(EditarUsuarioComponent, {
-      width: '40%',
+    const dialogRef = this.dialog.open(EditarFuncionarioComponent, {
+      width: '46%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
