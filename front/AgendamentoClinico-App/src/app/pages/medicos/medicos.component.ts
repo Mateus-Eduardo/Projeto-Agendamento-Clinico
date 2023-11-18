@@ -26,6 +26,7 @@ export class MedicosComponent implements AfterViewInit {
 
     this.cadastroForm = this.fb.group({
       nome: ['', Validators.required],
+      especialidade: ['', Validators.required],
       cpf: ['', [Validators.required]],
       endereco: ['', Validators.required],
       cidade: ['', Validators.required]
@@ -63,11 +64,11 @@ export class MedicosComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // Add any additional logic here after the dialog is closed
+    
     });
   }
 
-  EditarUsuario(): void {
+  EditarMedico(): void {
     const dialogRef = this.dialog.open(EditarMedicosComponent, {
       width: '40%',
       disableClose: true,

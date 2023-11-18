@@ -7,12 +7,14 @@ import { FuncionarioMaterialModule } from 'src/app/shared/Materials/funcionario-
 import { FuncionarioRoutingModule } from './funcionario-routing.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { EditarFuncionarioComponent } from './editar-funcionario/editar-funcionario.component';
+import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
 
 @NgModule({
   declarations: [
-    FuncionarioComponent
-
+    FuncionarioComponent,
+    EditarFuncionarioComponent,
+    CadastroFuncionarioComponent
   ],
   imports: [
     CommonModule,
@@ -25,4 +27,3 @@ import { MatNativeDateModule } from '@angular/material/core';
   ]
 })
 export class FuncionarioModule {}
-

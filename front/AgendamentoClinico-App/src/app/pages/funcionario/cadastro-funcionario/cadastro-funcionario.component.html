@@ -1,0 +1,58 @@
+<div class="container-geral">
+  <!-- ... (previous code) ... -->
+  <button mat-icon-button class="fechar" (click)="sair()">
+    <mat-icon aria-label="Fechar">close</mat-icon>
+  </button>
+  <mat-card-content>
+    <mat-card-title>Cadastro Funcionario</mat-card-title>
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label> Nome </mat-label>
+          <input matInput placeholder="Digite um nome válido" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <div class="content-forms">
+        <p class="form-cadastro-email">
+          <mat-form-field appearance="fill">
+            <mat-label> e-mail </mat-label>
+            <input matInput placeholder="Digite um e-mail válido" />
+          </mat-form-field>
+        </p>
+      </div>
+
+      <div class="content-forms">
+        <p class="form-cadastro-senha">
+          <mat-form-field appearance="fill">
+            <mat-label> Senha </mat-label>
+            <input matInput placeholder="Digite a senha" />
+            <mat-hint>Digite a senha</mat-hint>
+          </mat-form-field>
+        </p>
+
+        <p class="form-cadastro-confirmasenha">
+          <mat-form-field appearance="fill">
+            <mat-label> Confirmar Senha </mat-label>
+            <input matInput placeholder="Confirme a senha" />
+            <mat-hint>Confirme a senha</mat-hint>
+          </mat-form-field>
+        </p>
+      </div>
+    </form>
+    
+    <div class="button-container">
+      <button class="botao-cadastrar" mat-raised-button type="submit">
+        Cadastrar
+      </button>
+    
+      <button mat-raised-button color="warn" type="submit">
+        Limpar
+      </button>
+    </div>
+    
+  </mat-card-content>
+</div>
+
