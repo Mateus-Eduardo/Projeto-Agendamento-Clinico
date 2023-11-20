@@ -35,7 +35,7 @@ export class PacientesComponent implements AfterViewInit {
     });
   }
 
-  
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -59,47 +59,47 @@ export class PacientesComponent implements AfterViewInit {
 
   AddPaciente(): void {
     const dialogRef = this.dialog.open(CadastroPacientesComponent, {
-      width: '40%',
+      width: '50%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-    
+
     });
   }
 
   EditarPaciente(): void {
     const dialogRef = this.dialog.open(EditarPacientesComponent, {
-      width: '40%',
+      width: '50%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      
+
     });
   }
 
   editUser(id: number) {
-    
+
   }
 
   deleteUser(id: number) {
-   
+
   }
 
-  
+
   onSubmit() {
     if (this.cadastroForm.valid) {
-     
+
       console.log('Formulário válido:', this.cadastroForm.value);
     }
   }
 
-  
+
   limparFormulario() {
     this.cadastroForm.reset();
   }
