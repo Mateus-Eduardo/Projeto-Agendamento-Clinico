@@ -1,7 +1,6 @@
 .container-geral {
-  margin: 0 auto; 
+  margin: 0 auto;
   width: 100%;
-  max-height: 76vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,8 +18,9 @@
     // margin-bottom: 20px;
     width: 80%;
   }
-  mat-card-title{
-    margin-bottom: 10px;
+  .titulo{
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   mat-form-field {
@@ -94,6 +94,6 @@
   .form-cadastro-cidade{
     width: 47%;
   }
-  
+
 
 }
