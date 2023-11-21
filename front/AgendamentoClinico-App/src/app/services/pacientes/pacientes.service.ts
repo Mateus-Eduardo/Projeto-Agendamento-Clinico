@@ -29,10 +29,10 @@ export class PacientesService {
     const paciente = {
       nome_paciente,
       cpf_paciente,
-      telefone_paciente,
+      telefone_paciente: telefone_paciente || null,
       celular_paciente,
       endereco_paciente,
-      cidade_paciente  
+      cidade_paciente: cidade_paciente || null
     };
 
     console.log(paciente);

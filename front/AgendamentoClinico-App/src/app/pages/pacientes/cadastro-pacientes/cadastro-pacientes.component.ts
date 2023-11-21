@@ -35,8 +35,10 @@ export class CadastroPacientesComponent {
     this.cadastroPacienteForm = this.formBuilder.group({
       nome_paciente: ['', Validators.required],
       cpf_paciente: ['', Validators.required],
+      telefone_paciente: ['', Validators.required],
+      celular_paciente: ['', Validators.required],
       endereco_paciente: ['', Validators.required],
-      celular_paciente: ['', Validators.required]
+      cidade_paciente: ['', Validators.required],
     })
 
   }
