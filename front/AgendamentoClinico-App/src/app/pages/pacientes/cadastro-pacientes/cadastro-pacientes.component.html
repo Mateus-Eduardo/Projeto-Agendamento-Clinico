@@ -4,7 +4,7 @@
   </button>
   <mat-card-title class="titulo">Novo Cadastro</mat-card-title>
   <mat-card-content>
-    <form [formGroup]="cadastroPacienteForm" (ngSubmit)="onSubmit()" novalidate>
+    <form [formGroup]="cadastroPacienteForm" novalidate>
       <p>
         <mat-form-field appearance="fill">
           <mat-label for="nome_paciente"> Nome </mat-label>
@@ -34,7 +34,12 @@
         <p class="form-cadastro-telefone">
           <mat-form-field appearance="fill">
             <mat-label for="telefone_paciente"> Telefone </mat-label>
-            <input matInput placeholder="Telefone Residencial" />
+            <input
+              matInput
+              placeholder="Telefone Residencial"
+              formControlName="telefone_paciente"
+              #telefone_paciente
+             />
           </mat-form-field>
         </p>
       </div>
@@ -57,7 +62,12 @@
         <p class="form-cadastro-cidade">
           <mat-form-field appearance="fill">
             <mat-label for="cidade_paciente"> Cidade </mat-label>
-            <input matInput placeholder="Cidade" />
+            <input
+              matInput
+              placeholder="Cidade"
+              formControlName="cidade_paciente"
+              #cidade_paciente
+             />
           </mat-form-field>
         </p>
       </div>
@@ -76,11 +86,17 @@
         </p>
 
       <div class="button-container">
-        <button class="botao-cadastrar" mat-raised-button type="submit">
-          Cadastrar
-        </button>
+        <button class="botao-cadastrar" mat-raised-button type="submit"
+            (click)="createNewPaciente(
+                cadastroPacienteForm.value.nome_paciente,
+                cadastroPacienteForm.value.cpf_paciente,
+                cadastroPacienteForm.value.telefone_paciente,
+                cadastroPacienteForm.value.celular_paciente,
+                cadastroPacienteForm.value.endereco_paciente,
+                cadastroPacienteForm.value.cidade_paciente)"
+              >Cadastrar</button>
 
-        <button mat-raised-button color="warn" type="submit">
+        <button mat-raised-button color="warn">
           Limpar
         </button>
       </div>
