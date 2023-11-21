@@ -1,14 +1,14 @@
 const db = require('../config/database');
 
 // Função para remover caracteres não numéricos de uma string
-function sanitizeString(value) {
-  return value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-}
+// function sanitizeString(value) {
+//   return value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+// }
 
 // Função para truncar uma string para um comprimento máximo
-function truncateString(value, maxLength) {
-  return value.substring(0, maxLength);
-}
+// function truncateString(value, maxLength) {
+//   return value.substring(0, maxLength);
+// }
 
 // Método responsável por criar um novo 'Paciente': POST
 exports.createPaciente = async (req, res) => {
@@ -23,13 +23,13 @@ exports.createPaciente = async (req, res) => {
     } = req.body;
 
     // Ajuste para remover caracteres não numéricos e limitar o comprimento
-    const cpfSanitized = sanitizeString(cpf_paciente);    
+    // const cpfSanitized = sanitizeString(cpf_paciente);    
 
     const { rows } = await db.query(
       "INSERT INTO paciente (nome_paciente, cpf_paciente, cidade_paciente, telefone_paciente, celular_paciente, endereco_paciente) VALUES ($1, $2, $3, $4, $5, $6)",
       [
         nome_paciente,
-        truncateString(cpfSanitized, 11), // Limita o CPF a 11 caracteres
+        cpf_paciente, // Limita o CPF a 11 caracteres
         cidade_paciente,
         telefone_paciente,
         celular_paciente,
@@ -42,7 +42,7 @@ exports.createPaciente = async (req, res) => {
       body: {
         paciente: {
           nome_paciente,
-          cpf_paciente: truncateString(cpfSanitized, 11),
+          cpf_paciente,
           cidade_paciente,
           telefone_paciente,
           celular_paciente,
