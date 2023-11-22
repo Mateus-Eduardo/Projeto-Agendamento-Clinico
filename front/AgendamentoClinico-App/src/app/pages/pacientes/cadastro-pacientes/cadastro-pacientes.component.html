@@ -87,13 +87,15 @@
 
       <div class="button-container">
         <button class="botao-cadastrar" mat-raised-button type="submit"
-            (click)="createNewPaciente(
+            (click)="pacienteService.createNewPaciente(
                 cadastroPacienteForm.value.nome_paciente,
                 cadastroPacienteForm.value.cpf_paciente,
                 cadastroPacienteForm.value.telefone_paciente,
                 cadastroPacienteForm.value.celular_paciente,
                 cadastroPacienteForm.value.endereco_paciente,
                 cadastroPacienteForm.value.cidade_paciente)"
+
+                [disabled]="cadastroPacienteForm.pristine || cadastroPacienteForm.invalid"
               >Cadastrar</button>
 
         <button mat-raised-button color="warn">
