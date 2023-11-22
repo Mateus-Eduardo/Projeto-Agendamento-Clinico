@@ -17,7 +17,6 @@ export class CadastroPacientesComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<CadastroPacientesComponent>,
 
-    private fb: FormBuilder,
     private formBuilder: FormBuilder,
 
     public pacienteService: PacientesService
@@ -35,7 +34,7 @@ export class CadastroPacientesComponent {
     this.cadastroPacienteForm = this.formBuilder.group({
       nome_paciente: ['', Validators.required],
       cpf_paciente: ['', Validators.required],
-      telefone_paciente: ['', Validators.required],
+      telefone_paciente: ['',],
       celular_paciente: ['', Validators.required],
       endereco_paciente: ['', Validators.required],
       cidade_paciente: ['', Validators.required],
