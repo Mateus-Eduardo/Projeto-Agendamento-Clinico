@@ -13,6 +13,13 @@
     color: #ee7c75; /* Cor do ícone */
   }
 
+  .alert{
+    color: #ee7c75;
+    text-transform: lowercase;
+    font-size: 0.7rem;
+    padding: -10px;
+  }
+
   mat-card-content{
     margin: 0 auto;
     // margin-bottom: 20px;
