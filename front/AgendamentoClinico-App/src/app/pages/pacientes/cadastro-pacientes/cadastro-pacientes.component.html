@@ -10,13 +10,15 @@
           <mat-label for="nome_paciente"> Nome </mat-label>
           <input
             type="text"
-            matInput placeholder="Digite um nome"
+            matInput
+            placeholder=""
             formControlName="nome_paciente"
-
-            />
+          />
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
+
       </p>
+
 
       <div class="content-forms">
         <p class="form-cadastro-cpf">
@@ -24,10 +26,10 @@
             <mat-label for="cpf_paciente"> CPF </mat-label>
             <input
               type="number"
-              matInput placeholder="Digite um CPF válido"
+              matInput
+              placeholder="Digite um CPF válido"
               formControlName="cpf_paciente"
-
-              />
+            />
           </mat-form-field>
         </p>
 
@@ -38,15 +40,12 @@
               matInput
               placeholder="Telefone Residencial"
               formControlName="telefone_paciente"
-
-             />
+            />
           </mat-form-field>
         </p>
       </div>
 
       <div class="content-forms">
-
-
         <p class="form-cadastro-celular">
           <mat-form-field appearance="fill">
             <mat-label for="celular_paciente"> Celular </mat-label>
@@ -54,7 +53,6 @@
               matInput
               placeholder="Número de Celular"
               formControlName="celular_paciente"
-
             />
           </mat-form-field>
         </p>
@@ -66,39 +64,44 @@
               matInput
               placeholder="Cidade"
               formControlName="cidade_paciente"
-
-             />
+            />
           </mat-form-field>
         </p>
       </div>
 
-        <p>
-          <mat-form-field appearance="fill">
-            <mat-label for="endereco_paciente"> Endereço </mat-label>
-            <input
-              matInput
-              placeholder="Digite o Endereço"
-              formControlName="endereco_paciente"
-              
-              />
-            <mat-hint>Ex: Rua, nº - bairro</mat-hint>
-          </mat-form-field>
-        </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label for="endereco_paciente"> Endereço </mat-label>
+          <input
+            matInput
+            placeholder="Digite o Endereço"
+            formControlName="endereco_paciente"
+          />
+          <mat-hint>Ex: Rua, nº - bairro</mat-hint>
+        </mat-form-field>
+      </p>
 
       <div class="button-container">
-        <button class="botao-cadastrar" mat-raised-button type="submit"
-            (click)="createNewPaciente(
-                cadastroPacienteForm.value.nome_paciente,
-                cadastroPacienteForm.value.cpf_paciente,
-                cadastroPacienteForm.value.telefone_paciente,
-                cadastroPacienteForm.value.celular_paciente,
-                cadastroPacienteForm.value.endereco_paciente,
-                cadastroPacienteForm.value.cidade_paciente)"
-              >Cadastrar</button>
-
-        <button mat-raised-button color="warn">
-          Limpar
+        <button
+          class="botao-cadastrar"
+          mat-raised-button
+          type="submit"
+          (click)="
+            createNewPaciente(
+              cadastroPacienteForm.value.nome_paciente,
+              cadastroPacienteForm.value.cpf_paciente,
+              cadastroPacienteForm.value.telefone_paciente,
+              cadastroPacienteForm.value.celular_paciente,
+              cadastroPacienteForm.value.endereco_paciente,
+              cadastroPacienteForm.value.cidade_paciente
+            )
+          "
+          [disabled]="cadastroPacienteForm.pristine || cadastroPacienteForm.invalid"
+        >
+          Cadastrar
         </button>
+
+        <button mat-raised-button color="warn">Limpar</button>
       </div>
     </form>
   </mat-card-content>
