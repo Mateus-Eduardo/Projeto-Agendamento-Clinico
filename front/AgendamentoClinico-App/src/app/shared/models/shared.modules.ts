@@ -11,10 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ToolbarTitleComponent } from '../components/toolbar-title/toolbar-title.component';
 
-
-
-
-
 import { MatInputModule } from '@angular/material/input';
 
 
@@ -28,18 +24,19 @@ import { MatInputModule } from '@angular/material/input';
     MatMenuModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    
+
+
   ],
 
   declarations:[
     ToolbarTitleComponent,
-    
 
   ],
 
   exports: [
     ToolbarTitleComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 
