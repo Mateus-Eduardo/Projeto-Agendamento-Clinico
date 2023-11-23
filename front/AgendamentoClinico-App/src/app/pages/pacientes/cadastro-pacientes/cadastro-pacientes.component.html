@@ -25,11 +25,15 @@
           <mat-form-field appearance="fill">
             <mat-label for="cpf_paciente"> CPF </mat-label>
             <input
-              type="number"
               matInput
+              maxlength="14"
+              type="string"
               placeholder="Digite um CPF válido"
               formControlName="cpf_paciente"
+              (input)="onInputChange($event)"
+
             />
+
           </mat-form-field>
         </p>
 
@@ -40,6 +44,7 @@
               matInput
               placeholder="Telefone Residencial"
               formControlName="telefone_paciente"
+
             />
           </mat-form-field>
         </p>
@@ -96,7 +101,8 @@
               cadastroPacienteForm.value.cidade_paciente
             )
           "
-          [disabled]="cadastroPacienteForm.pristine || cadastroPacienteForm.invalid"
+          (click)="resetForm()"
+
         >
           Cadastrar
         </button>
@@ -106,3 +112,6 @@
     </form>
   </mat-card-content>
 </div>
+
+
+<!-- [disabled]="cadastroPacienteForm.pristine || cadastroPacienteForm.invalid" -->
