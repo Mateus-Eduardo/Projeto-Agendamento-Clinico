@@ -26,12 +26,14 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
     NavbarComponent,
+
 
   ],
   imports: [
@@ -46,6 +48,8 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     ReactiveFormsModule,
     MatSidenavModule,
     HttpClientModule,
+
+
 
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
