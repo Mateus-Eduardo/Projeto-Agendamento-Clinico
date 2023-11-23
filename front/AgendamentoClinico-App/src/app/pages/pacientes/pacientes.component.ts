@@ -1,49 +1,42 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DATA_PEOPLE } from './model/data-people';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroPacientesComponent } from './cadastro-pacientes/cadastro-pacientes.component';
 import { EditarPacientesComponent } from './editar-pacientes/editar-pacientes.component';
-
+import { PacientesService } from '../../services/pacientes/pacientes.service';
+import Paciente from '../../classes/pacientes/Paciente';
 
 @Component({
   selector: 'app-pacientes',
   templateUrl: './pacientes.component.html',
   styleUrls: ['./pacientes.component.scss']
 })
-
-
-
 export class PacientesComponent implements AfterViewInit {
 
-  public dataSource = new MatTableDataSource(DATA_PEOPLE);
+  cadastroForm!: FormGroup;
 
-  public displayColumns: string[] = ['name', 'cpf', 'address', 'phone', 'city', 'actions'];
+  pacientes: Paciente[] = [];
 
-  public cadastroForm: FormGroup;
-
-  constructor(public dialog: MatDialog, private fb: FormBuilder) {
-
-    this.cadastroForm = this.fb.group({
-      nome: ['', Validators.required],
-      cpf: ['', [Validators.required]],
-      endereco: ['', Validators.required],
-      cidade: ['', Validators.required]
-    });
-  }
-
-
+  dataSource: MatTableDataSource<Paciente> = new MatTableDataSource();
+  displayColumns: string[] = ['nome_paciente', 'cpf_paciente', 'telefone_paciente', 'celular_paciente', 'endereco_paciente', 'cidade_paciente', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(public dialog: MatDialog,
+    private fb: FormBuilder,
+    public pacienteService: PacientesService,
+  ) {}
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+  // Restante do código...
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -55,6 +48,11 @@ export class PacientesComponent implements AfterViewInit {
   }
 
   ngOnInit() {
+    this.pacienteService
+      .getPacientes()
+      .subscribe((data: Paciente[]) => {
+        this.pacientes = data;
+      });
   }
 
   AddPaciente(): void {
