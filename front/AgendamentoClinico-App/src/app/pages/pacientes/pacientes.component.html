@@ -23,40 +23,40 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Nome
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.name }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.nome_paciente }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="cpf_paciente">
       <mat-header-cell *matHeaderCellDef mat-sort-header> CPF </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.cpf }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.cpf_paciente }}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="telefone_paciente">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
-        Telefone Residencial
+        Telefone
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.address }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.telefone_paciente }}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="celular_paciente">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Celular
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.phone }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.celular_paciente }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="endereco_paciente">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Endereço
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.city }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.endereco_paciente }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="cidade_paciente">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Cidade
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.city }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.cidade_paciente }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -75,7 +75,7 @@
           <mat-icon class="edit-icon">edit</mat-icon>
         </button>
 
-        <button mat-icon-button (click)="deleteUser(person.id)">
+        <button mat-icon-button (click)="deletarPaciente(person.id)">
           <mat-icon class="delete-icon">delete_outline</mat-icon>
         </button>
       </mat-cell>

@@ -26,10 +26,12 @@ export class PacientesComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+
+
   constructor(public dialog: MatDialog,
     private fb: FormBuilder,
     public pacienteService: PacientesService,
-  ) {}
+  ) { }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -48,10 +50,15 @@ export class PacientesComponent implements AfterViewInit {
   }
 
   ngOnInit() {
+
     this.pacienteService
       .getPacientes()
       .subscribe((data: Paciente[]) => {
         this.pacientes = data;
+
+        this.dataSource.data = this.pacientes;
+
+        console.log(this.pacientes);
       });
   }
 
@@ -65,6 +72,7 @@ export class PacientesComponent implements AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
 
+      this.dataSource.data = this.pacientes;
     });
   }
 
@@ -81,24 +89,21 @@ export class PacientesComponent implements AfterViewInit {
     });
   }
 
-  editUser(id: number) {
+
+  deletarPaciente(id: number) {
 
   }
 
-  deleteUser(id: number) {
 
-  }
+  // onSubmit() {
+  //   if (this.cadastroForm.valid) {
 
-
-  onSubmit() {
-    if (this.cadastroForm.valid) {
-
-      console.log('Formulário válido:', this.cadastroForm.value);
-    }
-  }
+  //     console.log('Formulário válido:', this.cadastroForm.value);
+  //   }
+  // }
 
 
-  limparFormulario() {
-    this.cadastroForm.reset();
-  }
+  // limparFormulario() {
+  //   this.cadastroForm.reset();
+  // }
 }
