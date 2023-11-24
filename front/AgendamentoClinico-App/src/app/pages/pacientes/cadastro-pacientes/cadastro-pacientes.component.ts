@@ -32,17 +32,18 @@ export class CadastroPacientesComponent {
 
     // Desativar Validators.required se o CPF estiver completo
     const cpfControl = this.cadastroPacienteForm.get('cpf_paciente');
-    if (cpfControl?.value && cpfControl.value.length === 11) {
-      cpfControl.clearValidators();
-    } else {
-      cpfControl?.setValidators([Validators.required, Validators.maxLength(11), Validators.pattern('^[0-9]*$')]);
-    }
+    console.log(cpfControl?.value.length);
+
+    cpfControl?.setValidators([Validators.required, Validators.maxLength(14)]);
+
     cpfControl?.updateValueAndValidity();
   }
 
+
   createNewPaciente(nome_paciente: string, cpf_paciente: number, telefone_paciente: number, celular_paciente: number, endereco_paciente: string, cidade_paciente: string) {
-    this.pacienteService.createNewPaciente(nome_paciente, cpf_paciente, telefone_paciente, celular_paciente, endereco_paciente, cidade_paciente)
-  };
+
+    this.pacienteService.createNewPaciente(nome_paciente, cpf_paciente, telefone_paciente, celular_paciente, endereco_paciente, cidade_paciente);
+  }
 
   createForm() {
 

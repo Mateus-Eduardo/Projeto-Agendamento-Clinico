@@ -23,7 +23,7 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Nome
       </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{ row.nome_paciente }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.nome_paciente.toUpperCase() }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="cpf_paciente">
@@ -49,14 +49,14 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Endereço
       </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{ row.endereco_paciente }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.endereco_paciente.toUpperCase() }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="cidade_paciente">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Cidade
       </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{ row.cidade_paciente }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.cidade_paciente ? row.cidade_paciente.toUpperCase() : '' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
