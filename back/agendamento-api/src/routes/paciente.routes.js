@@ -22,3 +22,4 @@ router.delete('/pacientes/:id', pacienteController.deletePacienteById);
 
 
 module.exports = router;
+
