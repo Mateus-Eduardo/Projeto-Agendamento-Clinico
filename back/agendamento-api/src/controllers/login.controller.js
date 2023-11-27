@@ -10,7 +10,6 @@ exports.LogarFuncionario = async (req, res) => {
     // Consulta SQL para obter o usuário pelo e-mail
     const result = await db.query('SELECT * FROM funcionario WHERE email_funcionario = $1', [req.body.email_funcionario]);
 
-      // Verifica se o usuário existe
       if (result.rows.length === 0) {
         return res.status(400).json({
           erro: true,
@@ -18,8 +17,7 @@ exports.LogarFuncionario = async (req, res) => {
         });
       }
   
-      const usuario = result.rows[0];
-  
+      const usuario = result.rows[0];  
       // Compare as senhas usando bcrypt
       const senhaCorreta = await bcrypt.compare(req.body.senha_funcionario, usuario.senha_funcionario);
   

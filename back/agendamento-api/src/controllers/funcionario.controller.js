@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
+//POST
 exports.CadastrarFuncionario = async (req, res) => {
   try {
     // Verifique se os campos necessários estão presentes no corpo da requisição
@@ -29,7 +29,7 @@ exports.CadastrarFuncionario = async (req, res) => {
   }
 };
 
-
+//GET
 exports.ListarFuncionario = async (req, res) => {
     try {
       const result = await pool.query('SELECT * FROM funcionario');

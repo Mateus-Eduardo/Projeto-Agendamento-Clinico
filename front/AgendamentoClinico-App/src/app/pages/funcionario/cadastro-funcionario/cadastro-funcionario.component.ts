@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FuncionarioService } from 'src/app/services/funcionarios/funcionarios.service';
-import Funcionario  from 'src/app/classes/Funcionario';
+import Funcionario  from 'src/app/classes/funcionarios/Funcionario';
 
 
 @Component({

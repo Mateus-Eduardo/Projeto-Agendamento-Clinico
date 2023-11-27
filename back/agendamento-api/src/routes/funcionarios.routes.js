@@ -5,10 +5,12 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const funcionarioController = require('../controllers/funcionario.controller');
 
+
+
 // Rota para cadastrar um novo funcionário
-router.post('/Cadastrar', funcionarioController.CadastrarFuncionario);
+router.post('/cadastrar', funcionarioController.CadastrarFuncionario);
 // Rota para listar um novo funcionário
-router.get('/Listar', funcionarioController.ListarFuncionario);
+router.get('/listar', funcionarioController.ListarFuncionario);
 
 
 
