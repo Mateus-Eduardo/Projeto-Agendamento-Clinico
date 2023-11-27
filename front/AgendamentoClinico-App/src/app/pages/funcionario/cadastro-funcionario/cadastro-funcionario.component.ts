@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
+import { FuncionarioService } from 'src/app/services/funcionarios/funcionarios.service';
+import Funcionario  from 'src/app/classes/Funcionario';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class CadastroFuncionarioComponent{
 
   constructor(
     private fb: FormBuilder,
+    private funcionarioService: FuncionarioService,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<CadastroFuncionarioComponent>
   ) {
@@ -22,14 +24,28 @@ export class CadastroFuncionarioComponent{
       nome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required],
-      confirmarSenha: ['', Validators.required]
+
     });
   }
 
   onSubmit() {
     if (this.cadastroForm.valid) {
-      // Processar o formulário e enviar os dados
-      console.log('Formulário válido:', this.cadastroForm.value);
+      const novoFuncionario: Funcionario = {
+        nome_Funcionario: this.cadastroForm.value.nome,
+        email_Funcionario: this.cadastroForm.value.email,
+        senha_Funcionario: this.cadastroForm.value.senha,
+      };
+
+      this.funcionarioService.cadastrarFuncionario(novoFuncionario).subscribe(
+        (data) => {
+          console.log('Funcionário cadastrado:', data);
+          this.dialogRef.close();
+        },
+        (error) => {
+          console.error('Erro ao cadastrar o funcionário:', error);
+          // Adicione lógica aqui para lidar com o erro no front-end, se necessário
+        }
+      );
     }
   }
 
@@ -40,4 +56,5 @@ export class CadastroFuncionarioComponent{
   sair(): void {
     this.dialogRef.close();
   }
-}
+};
+
