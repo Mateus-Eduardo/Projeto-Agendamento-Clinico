@@ -8,7 +8,7 @@ const funcionarioController = require('../controllers/funcionario.controller');
 
 
 // Rota para cadastrar um novo funcionário
-router.post('/cadastrar', funcionarioController.CadastrarFuncionario);
+router.post('/funcionarios/', funcionarioController.CadastrarFuncionario);
 // Rota para listar um novo funcionário
 router.get('/listar', funcionarioController.ListarFuncionario);
 
