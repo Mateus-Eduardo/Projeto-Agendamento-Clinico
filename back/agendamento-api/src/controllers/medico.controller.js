@@ -14,7 +14,7 @@ exports.createMedico = async (req, res) => {
       } = req.body;
   
       // Ajuste para remover caracteres não numéricos e limitar o comprimento
-      // const cpfSanitized = sanitizeString(cpf_paciente);
+      // const cpfSanitized = sanitizeString(cpf_medico);
   
         const telefoneMedico = Array.isArray(telefone_medico) ? null : telefone_medico;
   
@@ -35,7 +35,7 @@ exports.createMedico = async (req, res) => {
       res.status(201).send({
         message: "Médico adicionado com sucesso!",
         body: {
-          paciente: {
+          medico: {
             nome_especialidade,
             nome_medico,
             crm_medico,
@@ -88,7 +88,7 @@ exports.createMedico = async (req, res) => {
     } = req.body;
   
     const response = await db.query(
-      "UPDATE medico SET nome_especialidade=$1, nome_medico=$2, crm_medico=$3, cpf_medico=$4, cidade_medico=$5, telefone_medico=$6, celular_medico=$7, email_medico=$8 WHERE id_paciente = $9",
+      "UPDATE medico SET nome_especialidade=$1, nome_medico=$2, crm_medico=$3, cpf_medico=$4, cidade_medico=$5, telefone_medico=$6, celular_medico=$7, email_medico=$8 WHERE id_medico = $9",
       [
         nome_especialidade,
         nome_medico,
@@ -97,7 +97,8 @@ exports.createMedico = async (req, res) => {
         cidade_medico,
         telefone_medico,
         celular_medico,
-        email_medico 
+        email_medico,
+        medicoId
       ]
     );
   
