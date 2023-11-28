@@ -10,13 +10,13 @@ import Funcionario  from 'src/app/classes/funcionarios/Funcionario';
   templateUrl: './cadastro-funcionario.component.html',
   styleUrls: ['./cadastro-funcionario.component.scss']
 })
-export class CadastroFuncionarioComponent{
+export class CadastroFuncionarioComponent {
 
   cadastroForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private funcionarioService: FuncionarioService,
+    public funcionarioService: FuncionarioService,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<CadastroFuncionarioComponent>
   ) {
@@ -24,11 +24,26 @@ export class CadastroFuncionarioComponent{
       nome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required],
-
     });
   }
 
-  onSubmit() {
+  cadastrarFuncionario(nome_funcionario: string, email_funcionario: string, senha_funcionario: string): void {
+    this.funcionarioService.cadastrarFuncionario(nome_funcionario, email_funcionario, senha_funcionario);
+  }
+
+  resetForm(): void {
+    this.cadastroForm.reset();
+  }
+
+  ngOnInit(): void {
+    // lógica de inicialização aqui
+  }
+
+  sair(): void {
+    this.dialogRef.close();
+  }
+
+  onSubmit(): void {
     if (this.cadastroForm.valid) {
       const novoFuncionario: Funcionario = {
         nome_Funcionario: this.cadastroForm.value.nome,
@@ -36,25 +51,12 @@ export class CadastroFuncionarioComponent{
         senha_Funcionario: this.cadastroForm.value.senha,
       };
 
-      this.funcionarioService.cadastrarFuncionario(novoFuncionario).subscribe(
-        (data) => {
-          console.log('Funcionário cadastrado:', data);
-          this.dialogRef.close();
-        },
-        (error) => {
-          console.error('Erro ao cadastrar o funcionário:', error);
-          // Adicione lógica aqui para lidar com o erro no front-end, se necessário
-        }
+      // Chamada da função para cadastrar o funcionário
+      this.cadastrarFuncionario(
+        novoFuncionario.nome_Funcionario,
+        novoFuncionario.email_Funcionario,
+        novoFuncionario.senha_Funcionario
       );
     }
   }
-
-  limparFormulario() {
-    this.cadastroForm.reset();
-  }
-
-  sair(): void {
-    this.dialogRef.close();
-  }
-};
-
+}
