@@ -10,6 +10,7 @@ const app = express();
 const index = require('./routes/index');
 const pacienteRoute = require('./routes/paciente.routes');
 const funcionariosRoutes = require('./routes/funcionarios.routes');
+const medicoRoutes = require('./routes/medico.routes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,7 +18,8 @@ app.use(cors());
 
 app.use(index);
 app.use('/api/', pacienteRoute);
-app.use('/api/funcionarios/', funcionariosRoutes);
+app.use('/api/', funcionariosRoutes);
+app.use('/api/', medicoRoutes);
 app.use('/api/auth/', authRouter);
 
 module.exports = app;
