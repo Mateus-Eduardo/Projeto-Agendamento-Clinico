@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FuncionarioService } from 'src/app/services/funcionarios/funcionarios.service';
 import Funcionario from 'src/app/classes/funcionarios/Funcionario';
 
+
 @Component({
   selector: 'app-funcionario',
   templateUrl: './funcionario.component.html',
