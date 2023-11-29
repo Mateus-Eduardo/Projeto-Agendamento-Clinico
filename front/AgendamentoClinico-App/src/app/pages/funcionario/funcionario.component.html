@@ -1,7 +1,4 @@
 <div class="container-geral">
-  <button mat-icon-button class="fechar" (click)="sair()">
-    <mat-icon aria-label="Fechar">close</mat-icon>
-  </button>
   <mat-card>
     <mat-card-title>Cadastrar Funcionario</mat-card-title>
     <mat-card-content>
@@ -11,41 +8,29 @@
         </mat-form-field>
 
         <mat-form-field>
-          <input
-            matInput
-            type="email"
-            placeholder="Email"
-            formControlName="email"
-            required
-          />
+          <input matInput type="email" placeholder="Email" formControlName="email" required />
         </mat-form-field>
 
         <mat-form-field>
-          <input
-            matInput
-            type="password"
-            placeholder="Senha"
-            formControlName="senha"
-            required
-          />
+          <input matInput type="password" placeholder="Senha" formControlName="senha" required />
         </mat-form-field>
 
         <mat-form-field>
-          <input
-            matInput
-            type="password"
-            placeholder="Confirmar Senha"
-            formControlName="confirmarSenha"
-            required
-          />
+          <input matInput type="password" placeholder="Confirmar Senha" formControlName="confirmarSenha" required />
         </mat-form-field>
 
         <div class="button-container">
           <button mat-raised-button class="botao-cadastro" type="submit">
             Cadastrar
           </button>
+
+
           <button mat-button (click)="limparFormulario()">Limpar</button>
         </div>
+        <mat-icon class= "Login" routerLink="/tela-login">how_to_reg </mat-icon>
+
+
+
       </form>
     </mat-card-content>
   </mat-card>

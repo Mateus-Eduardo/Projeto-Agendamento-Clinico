@@ -1,8 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
-
+import { FuncionarioService } from 'src/app/services/funcionarios/funcionarios.service';
+import Funcionario from 'src/app/classes/funcionarios/Funcionario';
 
 @Component({
   selector: 'app-funcionario',
@@ -15,8 +14,7 @@ export class FuncionarioComponent {
 
   constructor(
     private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    public dialogRef: MatDialogRef<FuncionarioComponent>
+    public funcionarioService: FuncionarioService,
   ) {
     this.cadastroForm = this.fb.group({
       nome: ['', Validators.required],
@@ -26,18 +24,27 @@ export class FuncionarioComponent {
     });
   }
 
+  cadastrarFuncionario(nome_funcionario: string, email_funcionario: string, senha_funcionario: string): void {
+    this.funcionarioService.cadastrarFuncionario(nome_funcionario, email_funcionario, senha_funcionario);
+  }
+
   onSubmit() {
     if (this.cadastroForm.valid) {
-      // Processar o formulário e enviar os dados
-      console.log('Formulário válido:', this.cadastroForm.value);
+      const novoFuncionario: Funcionario = {
+        nome_Funcionario: this.cadastroForm.value.nome,
+        email_Funcionario: this.cadastroForm.value.email,
+        senha_Funcionario: this.cadastroForm.value.senha,
+      };
+
+      this.cadastrarFuncionario(
+        novoFuncionario.nome_Funcionario,
+        novoFuncionario.email_Funcionario,
+        novoFuncionario.senha_Funcionario
+      );
     }
   }
 
   limparFormulario() {
     this.cadastroForm.reset();
-  }
-
-  sair(): void {
-    this.dialogRef.close();
   }
 }

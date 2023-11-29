@@ -34,7 +34,7 @@ export class EditarFuncionarioComponent {
   limparFormulario() {
     this.cadastroForm.reset();
   }
-
+  
   sair(): void {
     this.dialogRef.close();
   }
