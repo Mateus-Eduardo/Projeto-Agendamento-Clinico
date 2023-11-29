@@ -1,6 +1,8 @@
 <div class="container-geral">
   <!-- ... (previous code) ... -->
   <button mat-icon-button class="fechar" (click)="sair()">
+
+
     <mat-icon aria-label="Fechar">close</mat-icon>
   </button>
   <mat-card-content>
@@ -9,7 +11,7 @@
       <p>
         <mat-form-field appearance="fill">
           <mat-label> Nome </mat-label>
-          <input matInput placeholder="Digite um nome válido" formControlName="nome" />
+          <input matInput placeholder="Digite um nome válido" formControlName="nome" required />
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
       </p>
@@ -18,31 +20,43 @@
         <p class="form-cadastro-email">
           <mat-form-field appearance="fill">
             <mat-label> e-mail </mat-label>
-            <input matInput placeholder="Digite um e-mail válido" formControlName="email" />
+            <input matInput placeholder="Digite um e-mail válido" formControlName="email"required  />
           </mat-form-field>
         </p>
       </div>
 
 
-      <p class="form-cadastro-senha">
+      <div class="content-forms">
+        <p class="form-cadastro-senha">
         <mat-form-field appearance="fill">
           <mat-label> Senha </mat-label>
-          <input matInput placeholder="Digite a senha" formControlName="senha" />
+          <input matInput placeholder="Digite a senha" formControlName="senha"required  />
           <mat-hint>Digite a senha</mat-hint>
         </mat-form-field>
       </p>
 
-
-      <div class="button-container">
-        <button class="botao-cadastrar" mat-raised-button type="submit">
-           Cadastrar
-        </button>
-
-      <button mat-raised-button color="warn" type="button">
-        Limpar
-      </button>
+      <p class="form-cadastro-senha">
+      <mat-form-field appearance="fill">
+        <mat-label> Confirmar Senha </mat-label>
+        <input matInput placeholder="Confirme a senha" formControlName="confirmarSenha"required  />
+        <mat-hint>Confirme a senha</mat-hint>
+      </mat-form-field>
+   </p>
     </div>
-    </form>
+
+
+    <div class="button-container">
+
+      <button mat-raised-button class="botao-cadastrar" type="submit">
+        Cadastrar
+      </button>
+
+
+      <button mat-button class="Limpar" (click)="limparFormulario()">Limpar</button>
+
+    </div>
+  </form>
   </mat-card-content>
+
 </div>
 

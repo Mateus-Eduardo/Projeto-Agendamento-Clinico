@@ -24,6 +24,8 @@ export class CadastroFuncionarioComponent {
       nome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required],
+      confirmarSenha: ['', Validators.required]
+
     });
   }
 
@@ -31,13 +33,6 @@ export class CadastroFuncionarioComponent {
     this.funcionarioService.cadastrarFuncionario(nome_funcionario, email_funcionario, senha_funcionario);
   }
 
-  resetForm(): void {
-    this.cadastroForm.reset();
-  }
-
-  ngOnInit(): void {
-    // lógica de inicialização aqui
-  }
 
   sair(): void {
     this.dialogRef.close();
@@ -58,5 +53,9 @@ export class CadastroFuncionarioComponent {
         novoFuncionario.senha_Funcionario
       );
     }
+  }
+
+  limparFormulario() {
+    this.cadastroForm.reset();
   }
 }

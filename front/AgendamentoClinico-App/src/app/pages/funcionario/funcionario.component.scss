@@ -6,6 +6,16 @@
   display: flex;
   flex-direction: column;
 
+
+  .Login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #21db00; /* Cor do ícone */
+    font-size: 30px;
+
+  }
+
   mat-card{
     margin: 0 auto;
     margin-bottom: 20px;
@@ -25,6 +35,17 @@
     font-weight: 400;
     font-size: 1.2rem;
     color: #326089;
+  }
+
+  botao-login{
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red($color: #000000);
+
   }
 
 
@@ -56,4 +77,11 @@
     background-color: #0e6a8e;
     color: #fff;
   }
+
+  mat-icon{
+    color: red($color: #000000);
+  }
+
+
+
 }

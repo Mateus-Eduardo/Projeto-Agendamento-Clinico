@@ -23,6 +23,7 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
     MatGridListModule,
     SharedModule,
     MatDatepickerModule,
+
     MatNativeDateModule,
   ]
 })

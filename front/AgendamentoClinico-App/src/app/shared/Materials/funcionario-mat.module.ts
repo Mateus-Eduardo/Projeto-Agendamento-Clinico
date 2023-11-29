@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,7 +30,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatButtonModule,
     MatGridListModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+
   ],
   declarations:[],
   providers:[],
