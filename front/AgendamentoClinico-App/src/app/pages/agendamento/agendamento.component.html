@@ -5,19 +5,11 @@
     </button> -->
   </app-toolbar-title>
 
-<div class="calendar">
-  <mat-card class="demo-inline-calendar-card">
-    <mat-calendar [(selected)]="selected"></mat-calendar>
-  </mat-card>
-</div>
+  <div class="calendar">
 
+    <full-calendar [options]="calendarOptions"></full-calendar>
+
+  </div>
 
   <router-outlet></router-outlet>
-
-
 </div>
-
-
-
-
-
