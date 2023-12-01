@@ -1,9 +1,14 @@
-const pool = require('../config/database');
 const express = require('express');
-const bcrypt = require('bcrypt');
-const loginController = require('../controllers/login.controller');
 const router = express.Router();
+const loginController = require('../controllers/login.controller');
+const authMiddleware = require('../middlewares/authMiddleware');
+const jwtService = require ('../services/jwtService.js');
 
-router.post('/Login', loginController.LogarFuncionario);
+router.post('/login', loginController.LogarFuncionario);
+
+// Rota protegida que usa o middleware de autenticação
+router.get('/rota-protegida', authMiddleware, (req, res) => {
+  res.json({ mensagem: 'Esta rota é protegida' });
+});
 
 module.exports = router;

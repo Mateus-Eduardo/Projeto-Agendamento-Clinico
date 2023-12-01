@@ -66,4 +66,23 @@
     color: #fff;
 
   }
+
+  .error-message {
+    color: #d32f2f; /* Cor vermelha, você pode ajustar conforme necessário */
+    font-size: 14px;
+    margin-left: 75px;
+  }
+  /* Adicione este estilo para animações (opcional) */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .error-message {
+    animation: fadeIn 0.3s ease; /* Adapte conforme necessário */
+  }
 }

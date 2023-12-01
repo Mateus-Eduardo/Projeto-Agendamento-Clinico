@@ -1,5 +1,4 @@
-// tela-login.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AuthService } from './../../services/auth/auth.service';
 import { Router } from '@angular/router';
@@ -9,25 +8,36 @@ import { Router } from '@angular/router';
   templateUrl: './tela-login.component.html',
   styleUrls: ['./tela-login.component.scss'],
 })
-export class TelaLoginComponent {
-  constructor(public authService: AuthService, private router: Router) {}
-
+export class TelaLoginComponent implements OnInit {
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
   senha = new FormControl('', [Validators.required]);
+  errorMessage: string = ''; // Adicione esta linha
+
+  constructor(public authService: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    // Redirecionar automaticamente se o usuário já estiver autenticado
+
+  }
 
   loginFuncionario(event: Event) {
-    event.preventDefault(); // Evitar o envio padrão do formulário
+    event.preventDefault();
+
     const email_funcionario = this.email.value || '';
     const senha_funcionario = this.senha.value || '';
 
     this.authService.loginFuncionario(email_funcionario, senha_funcionario).subscribe(
       (response) => {
-        console.log('Funcionário logado com sucesso', response);
+      const token = response.token;
         this.router.navigate(['/agendamento']);
+        this.authService.logadoTrue()
+
+        localStorage.setItem("token", JSON.stringify(token));
       },
       (error) => {
         console.error('Erro ao logar o funcionário:', error);
+        this.errorMessage = 'Usuário ou senha incorretos'; // Defina a mensagem de erro
       }
     );
   }
