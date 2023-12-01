@@ -9,6 +9,10 @@ import { AgendamentoMaterialModule } from 'src/app/shared/Materials/agendamento-
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import interactionPlugin from '@fullcalendar/interaction';
+import daygridPlugin from '@fullcalendar/daygrid';
+
 
 
 
@@ -23,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     AgendamentoMaterialModule,
     MatDatepickerModule,
     MatCardModule,
-    SharedModule
+    SharedModule,
+    FullCalendarModule
   ]
 })
 export class AgendamentoModule {}

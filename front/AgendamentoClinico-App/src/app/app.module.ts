@@ -20,6 +20,15 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import interactionPlugin from '@fullcalendar/interaction';
+import daygridPlugin from '@fullcalendar/daygrid';
+
+// FullCalendarModule.registerPlugins([
+//   interactionPlugin,
+//   daygridPlugin
+// ])
+
 
 
 
@@ -48,6 +57,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     ReactiveFormsModule,
     MatSidenavModule,
     HttpClientModule,
+    FullCalendarModule
 
 
 
