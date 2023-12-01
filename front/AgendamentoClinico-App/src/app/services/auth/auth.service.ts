@@ -3,22 +3,39 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private isAuthenticatedValue: boolean = false;
-  private authToken: string = '';
+  private authTokenKey = 'authToken';
 
   uri = 'http://localhost:3000/api/auth';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {
+    // Ao iniciar o serviço, verificar se há um token armazenado no localStorage
+    const storedToken = localStorage.getItem(this.authTokenKey);
+    if (storedToken) {
+      this.isAuthenticatedValue = true;
+    }
+  }
+
+  isLogado: boolean = false
+
+  logadoTrue(){
+    this.isLogado = true
+  }
+
+  logadoFalse(){
+    this.isLogado = false
+  }
 
   loginFuncionario(
     email_funcionario: string,
-    senha_funcionario: string
+    senha_funcionario: string,
+
   ): Observable<any> {
     const auth = {
       email_funcionario,
@@ -37,7 +54,9 @@ export class AuthService {
         const token = response.token;
 
         if (token) {
-          this.authToken = token;
+          // Armazenar o token no localStorage
+          localStorage.setItem(this.authTokenKey, token);
+
           this.setAuthenticated(true);
         }
 
@@ -47,10 +66,15 @@ export class AuthService {
   }
 
   logout() {
-    // Lógica de logout, chamada à API, etc.
-    // Aqui, você pode adicionar qualquer lógica necessária para deslogar o usuário.
-    // Por exemplo, chamar uma API para invalidar o token de autenticação.
+    // Limpar o token do localStorage ao fazer logout
+    localStorage.removeItem(this.authTokenKey);
+
+    // Lógica adicional de logout, se necessário
+
     this.setAuthenticated(false);
+
+    // Redirecionar para a tela de login após o logout
+    this.router.navigate(['/tela-login']);
   }
 
   isAuthenticated(): boolean {
@@ -59,5 +83,11 @@ export class AuthService {
 
   setAuthenticated(isAuthenticated: boolean) {
     this.isAuthenticatedValue = isAuthenticated;
+  }
+
+  checkAuthenticationAndRedirect() {
+    if (this.isAuthenticated()) {
+      this.router.navigate(['/agendamento']);
+    }
   }
 }

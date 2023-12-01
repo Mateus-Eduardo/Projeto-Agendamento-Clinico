@@ -1,5 +1,5 @@
 <mat-toolbar  class="toolbar-menu">
-  <mat-toolbar-row>    
+  <mat-toolbar-row>
     <a routerLink="/pacientes">
       <img class="logo-image" src="../../../../assets/logo/_NEWCARD.PNG" alt="" />
     </a>
@@ -20,13 +20,13 @@
             <mat-icon>add</mat-icon>
             <span>Adicionar</span>
           </button>
-          
-          <button mat-menu-item>
+
+          <button (click)="sair()" mat-menu-item>
             <mat-icon>exit_to_app</mat-icon>
             <span>Sair</span>
           </button>
         </mat-menu>
-        
+
       </div>
     </div>
   </mat-toolbar-row>

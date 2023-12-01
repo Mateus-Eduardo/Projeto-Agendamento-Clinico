@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 
 
 @Component({
@@ -6,9 +7,18 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'AgendamentoClinico-App';
-  
+  isLogado: boolean = false
 
+  constructor(private service: AuthService) {
+    
+  }
 
+  ngOnInit(): void {
+    const variavel =  this.service.isLogado
+    console.log("App " + variavel);
+
+    this.isLogado = variavel;
+  }
 }

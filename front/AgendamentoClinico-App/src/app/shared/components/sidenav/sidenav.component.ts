@@ -3,6 +3,7 @@ import { MenuItem } from '../../models/menuItem';
 import { menuItems } from '../../models/menu';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 
+
 interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
