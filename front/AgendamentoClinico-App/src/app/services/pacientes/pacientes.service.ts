@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar'; // Importe o MatSnackBar
 import Paciente from 'src/app/classes/pacientes/Paciente';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +11,9 @@ export class PacientesService {
 
   uri = 'http://localhost:3000/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
-  getPacientes(): Observable<Paciente[]> { // Declarando o retorno como um Observable
+  getPacientes(): Observable<Paciente[]> {
     return this.http.get<Paciente[]>(`${this.uri}/pacientes`);
   }
 
@@ -25,7 +24,7 @@ export class PacientesService {
     celular_paciente: number,
     endereco_paciente: string,
     cidade_paciente: string
-  ) {
+  ): Observable<any> {
     const paciente = {
       nome_paciente,
       cpf_paciente,
@@ -35,11 +34,12 @@ export class PacientesService {
       cidade_paciente: cidade_paciente || null
     };
 
-    console.log(paciente);
-
-      // (POST - URL no Back-End): http://localhost:3000/api/pacientes
-    this.http.post(`${this.uri}/pacientes`, paciente)
-    .subscribe((res: any) => console.log('Feito'));
+    return this.http.post(`${this.uri}/pacientes`, paciente);
   }
 
+  showSuccessMessage() {
+    this._snackBar.open('Paciente adicionado com sucesso!', 'Fechar', {
+      duration: 2000,
+    });
+  }
 }

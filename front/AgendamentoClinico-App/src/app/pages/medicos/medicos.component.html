@@ -4,7 +4,6 @@
     </button> -->
 </app-toolbar-title>
 
-
 <mat-form-field class="form-pesquisar">
   <mat-label>Buscar</mat-label>
 
@@ -18,58 +17,70 @@
 </mat-form-field>
 
 <div class="table-medicos">
-  <mat-table
-    class="mat-elevation-z4"
-    [dataSource]="dataSource"
-    matSort
-  >
+  <mat-table class="mat-elevation-z4" [dataSource]="dataSource" matSort>
 
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>
-      Nome
-    </mat-header-cell>
-    <mat-cell *matCellDef="let person"> {{ person.name }} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="cpf">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> CPF </mat-header-cell>
-    <mat-cell *matCellDef="let person"> {{ person.cpf }} </mat-cell>
-  </ng-container>
-    <ng-container matColumnDef="address">
+    <ng-container matColumnDef="nome_medico">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
-        Endereço
+        Nome
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.address }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.nome_medico.toUpperCase() }} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="phone">
+
+    <ng-container matColumnDef="cpf_medico">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> CPF </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.cpf_medico }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telefone_medico">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Telefone
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.phone }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.telefone_medico }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="city">
+
+    <ng-container matColumnDef="celular_medico">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Celular
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.celular_medico }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="cidade_medico">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Cidade
       </mat-header-cell>
-      <mat-cell *matCellDef="let person"> {{ person.city }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.cidade_medico.toUpperCase() }} </mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="crm_medico">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        CRM
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.crm_medico.toUpperCase() }} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>
-
-        <button class="botao-adicionar" mat-raised-button (click)="AddMedico()"><mat-icon>add</mat-icon>Novo</button>
-
+        <button
+          class="botao-adicionar"
+          mat-raised-button
+          (click)="AddMedico()"
+        >
+          <mat-icon>add</mat-icon>Novo
+        </button>
       </mat-header-cell>
-      <mat-cell *matCellDef="let person">
 
+      <mat-cell *matCellDef="let person">
         <button mat-icon-button (click)="EditarMedico()">
           <mat-icon class="edit-icon">edit</mat-icon>
-        </button>   
-        
-        <button mat-icon-button (click)="deleteUser(person.id)">
-          <mat-icon class="delete-icon">delete_outline</mat-icon>
         </button>
 
+        <button mat-icon-button (click)="deletarMedico(person.id)">
+          <mat-icon class="delete-icon">delete_outline</mat-icon>
+        </button>
       </mat-cell>
     </ng-container>
+
     <tr class="mat-row flex-center" *matNoDataRow>
       <td class="mat-cell" colspan="1">
         Nenhum dado encontrado com o termo "{{ input.value }}"
@@ -80,13 +91,11 @@
     <mat-row *matRowDef="let person; columns: displayColumns"></mat-row>
   </mat-table>
 </div>
+
 <mat-paginator
   class="paginator mat-elevation-z4"
   [pageSize]="10"
   [pageSizeOptions]="[5, 10, 25]"
 ></mat-paginator>
-
-
-
 
 <router-outlet></router-outlet>
