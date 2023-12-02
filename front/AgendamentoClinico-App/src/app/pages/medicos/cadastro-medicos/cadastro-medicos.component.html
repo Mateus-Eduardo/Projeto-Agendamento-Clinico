@@ -2,98 +2,113 @@
   <button mat-icon-button class="fechar" (click)="sair()">
     <mat-icon aria-label="Fechar">close</mat-icon>
   </button>
-  <mat-card-title>Novo Cadastro</mat-card-title>
+  <mat-card-title class="titulo">Novo Cadastro</mat-card-title>
   <mat-card-content>
-    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="cadastroMedicoForm" novalidate>
 
-      <p>
+      <p class="form-cadastro-nome">
         <mat-form-field appearance="fill">
-          <mat-label> Nome </mat-label>
-          <input matInput placeholder="Digite um nome válido" />
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-label for="nome_medico"> Nome </mat-label>
+          <input matInput placeholder="Nome do Medico" formControlName="nome_medico" />
         </mat-form-field>
       </p>
 
       <div class="content-forms">
         <p class="form-cadastro-especialidade">
           <mat-form-field appearance="fill">
-            <mat-label> Especialidade </mat-label>
-            <input matInput placeholder="Digite uma especialidade" />
+            <mat-label for="nome_especialidade"> Especialidade </mat-label>
+            <input matInput placeholder="Especialidade do Medico" formControlName="nome_especialidade" />
           </mat-form-field>
         </p>
 
-        <p class="form-cadastro">
+        <p class="form-cadastro-crm">
           <mat-form-field appearance="fill">
-            <mat-label> CRM</mat-label>
-            <input matInput placeholder="Digite o CRM" />
+            <mat-label for="crm_medico"> CRM </mat-label>
+            <input matInput placeholder="Crm do Medico" formControlName="crm_medico" />
           </mat-form-field>
         </p>
       </div>
 
       <div class="content-forms">
-
         <p class="form-cadastro-cpf">
           <mat-form-field appearance="fill">
-            <mat-label> CPF </mat-label>
-            <input matInput placeholder="Digite um CPF válido" />
-          </mat-form-field>
-        <p class="form-cadastro-email">
-          <mat-form-field appearance="fill">
-            <mat-label> e-mail </mat-label>
-            <input matInput placeholder="Digite um e-mail valido" />
+            <mat-label for="cpf_medico"> CPF </mat-label>
+            <input matInput maxlength="14" type="string" placeholder="Digite um CPF válido" formControlName="cpf_medico" (input)="onInputChange($event)" />
           </mat-form-field>
         </p>
-        
-      </div>
 
+        <p class="form-cadastro-email">
+          <mat-form-field appearance="fill">
+            <mat-label for="email_medico"> Email </mat-label>
+            <input matInput placeholder="Digite um Email Valido" formControlName="email_medico" />
+          </mat-form-field>
+        </p>
+      </div>
 
       <div class="content-forms">
         <p class="form-cadastro-celular">
           <mat-form-field appearance="fill">
-            <mat-label> Celular </mat-label>
-            <input matInput placeholder="Número de celular" />
+            <mat-label for="celular_medico"> Celular </mat-label>
+            <input matInput placeholder="Número de Celular" formControlName="celular_medico" />
           </mat-form-field>
         </p>
 
         <p class="form-cadastro-telefone">
           <mat-form-field appearance="fill">
-            <mat-label> Telefone </mat-label>
-            <input matInput placeholder="Digite o telefone" />
+            <mat-label for="telefone_medico"> Telefone </mat-label>
+            <input matInput placeholder="telefone_medico" formControlName="telefone_medico" />
           </mat-form-field>
         </p>
-      </div>
-
-      <div class="content-forms">
-
       </div>
 
       <div class="content-forms">
         <p class="form-cadastro-endereco">
           <mat-form-field appearance="fill">
-            <mat-label> Endereço </mat-label>
-            <input matInput placeholder="Digite o endereço" />
+            <mat-label for="endereco_medico"> Endereço </mat-label>
+            <input matInput placeholder="Digite o Endereço" formControlName="endereco_medico" />
             <mat-hint>Ex: Rua, nº - bairro</mat-hint>
           </mat-form-field>
         </p>
 
-        <p class="form-cadastro">
+        <p class="form-cadastro-cidade">
           <mat-form-field appearance="fill">
-            <mat-label> Cidade </mat-label>
-            <input matInput placeholder="Digite a cidade" />
+            <mat-label for="endereco_cidade"> Cidade </mat-label>
+            <input matInput placeholder="Digite a Cidade" formControlName="cidade_medico" />
           </mat-form-field>
         </p>
       </div>
-    </form>
 
+
+    </form>
   </mat-card-content>
 </div>
 
 <div class="button-container">
-  <button class="botao-cadastrar" mat-raised-button type="submit">
-    Cadastrar
-  </button>
 
-  <button mat-raised-button color="warn" type="submit">
-    Limpar
-  </button>
+  <button
+  class="botao-cadastrar"
+  mat-raised-button
+  type="submit"
+  (click)="
+
+    createNewMedico(
+      cadastroMedicoForm.value.nome_especialidade,
+      cadastroMedicoForm.value.nome_medico,
+      cadastroMedicoForm.value.cpf_medico,
+      cadastroMedicoForm.value.crm_medico,
+      cadastroMedicoForm.value.telefone_medico,
+      cadastroMedicoForm.value.celular_medico,
+      cadastroMedicoForm.value.email_medico,
+      cadastroMedicoForm.value.endereco_medico,
+      cadastroMedicoForm.value.cidade_medico
+
+    )
+  "
+  (click)="resetForm()"
+
+>
+  Cadastrar
+</button>
+
+  <button mat-raised-button color="warn" (click)="resetForm()">Limpar</button>
 </div>

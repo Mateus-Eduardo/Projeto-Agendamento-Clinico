@@ -28,61 +28,47 @@ export class CadastroPacientesComponent {
   onInputChange(event: any) {
     const inputValue = event.target.value;
     const formattedCPF = this.maskService.formatCPF(inputValue);
-    this.cadastroPacienteForm.patchValue({ cpf_paciente: formattedCPF }, { emitEvent: true});
+    this.cadastroPacienteForm.patchValue({ cpf_paciente: formattedCPF }, { emitEvent: true });
 
-    // Desativar Validators.required se o CPF estiver completo
     const cpfControl = this.cadastroPacienteForm.get('cpf_paciente');
-    console.log(cpfControl?.value.length);
-
     cpfControl?.setValidators([Validators.required, Validators.maxLength(14)]);
-
     cpfControl?.updateValueAndValidity();
   }
 
-
-  createNewPaciente(nome_paciente: string, cpf_paciente: number, telefone_paciente: number, celular_paciente: number, endereco_paciente: string, cidade_paciente: string) {
-
-    this.pacienteService.createNewPaciente(nome_paciente, cpf_paciente, telefone_paciente, celular_paciente, endereco_paciente, cidade_paciente);
+  createNewPaciente( nome_paciente: string, cpf_paciente: number, telefone_paciente: number, celular_paciente: number, endereco_paciente: string, cidade_paciente: string) {
+    this.pacienteService.createNewPaciente( nome_paciente, cpf_paciente, telefone_paciente, celular_paciente, endereco_paciente, cidade_paciente)
+      .subscribe(
+        (response) => {
+          this.pacienteService.showSuccessMessage(); // Exibe a mensagem de sucesso
+          this.resetForm();
+        },
+        (error) => {
+          // Trate os erros aqui
+        }
+      );
   }
 
   createForm() {
-
     this.cadastroPacienteForm = this.formBuilder.group({
       nome_paciente: ['', Validators.required],
-      cpf_paciente:['', Validators.required],
+      cpf_paciente: ['', Validators.required],
       telefone_paciente: [''],
       celular_paciente: ['', Validators.required],
       endereco_paciente: ['', Validators.required],
       cidade_paciente: ['', Validators.required],
     });
-
   }
 
-  public resetForm(): void{
+  public resetForm(): void {
     this.cadastroPacienteForm.reset();
   }
 
-
-
-  // formatarCPF(value: number): void {
-  //   this.valorCPF = this.maskService.formatCPF(value);
-  // }
-
-
-
   ngOnInit(): void {
-
+    // Se necessário, faça alguma inicialização no componente
   }
+   
 
   sair(): void {
     this.dialogRef.close();
   }
-
-
-  // onSubmit() {
-  //   if (this.cadastroPacienteForm.valid) {
-  //     // Processar o formulário e enviar os dados
-  //     console.log('Formulário válido:', this.cadastroPacienteForm.value);
-  //   }
-  // }
 }

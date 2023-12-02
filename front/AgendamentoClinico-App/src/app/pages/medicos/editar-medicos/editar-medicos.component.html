@@ -5,7 +5,7 @@
     <mat-card-title>Novo Cadastro</mat-card-title>
     <mat-card-content>
       <form [formGroup]="editarForm" (ngSubmit)="onSubmit()">
-  
+
         <p>
           <mat-form-field appearance="fill">
             <mat-label> Nome </mat-label>
@@ -13,7 +13,7 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
         </p>
-  
+
         <div class="content-forms">
           <p class="form-cadastro-especialidade">
             <mat-form-field appearance="fill">
@@ -21,7 +21,7 @@
               <input matInput placeholder="Digite uma especialidade" />
             </mat-form-field>
           </p>
-  
+
           <p class="form-cadastro-crm">
             <mat-form-field appearance="fill">
               <mat-label> CRM</mat-label>
@@ -29,24 +29,26 @@
             </mat-form-field>
           </p>
         </div>
-  
+
         <div class="content-forms">
-  
+
           <p class="form-cadastro-cpf">
             <mat-form-field appearance="fill">
               <mat-label> CPF </mat-label>
               <input matInput placeholder="Digite um CPF válido" />
             </mat-form-field>
+
+
           <p class="form-cadastro-email">
             <mat-form-field appearance="fill">
               <mat-label> e-mail </mat-label>
               <input matInput placeholder="Digite um e-mail valido" />
             </mat-form-field>
           </p>
-          
+
         </div>
-  
-  
+
+
         <div class="content-forms">
           <p class="form-cadastro-celular">
             <mat-form-field appearance="fill">
@@ -54,7 +56,7 @@
               <input matInput placeholder="Número de celular" />
             </mat-form-field>
           </p>
-  
+
           <p class="form-cadastro-telefone">
             <mat-form-field appearance="fill">
               <mat-label> Telefone </mat-label>
@@ -62,11 +64,11 @@
             </mat-form-field>
           </p>
         </div>
-  
+
         <div class="content-forms">
-  
+
         </div>
-  
+
         <div class="content-forms">
           <p class="form-cadastro-endereco">
             <mat-form-field appearance="fill">
@@ -75,7 +77,9 @@
               <mat-hint>Ex: Rua, nº - bairro</mat-hint>
             </mat-form-field>
           </p>
-  
+
+          
+
           <p class="form-cadastro">
             <mat-form-field appearance="fill">
               <mat-label> Cidade </mat-label>
@@ -84,15 +88,15 @@
           </p>
         </div>
       </form>
-  
+
     </mat-card-content>
   </div>
-  
+
   <div class="button-container">
     <button class="botao-cadastrar" mat-raised-button type="submit">
       Cadastrar
     </button>
-  
+
     <button mat-raised-button color="warn" type="submit">
       Limpar
     </button>

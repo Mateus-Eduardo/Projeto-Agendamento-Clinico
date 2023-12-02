@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { DATA_PEOPLE } from './model/data-people';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,6 +6,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.component';
 import { EditarMedicosComponent } from './editar-medicos/editar-medicos.component';
+import { MedicosService } from '../../services/medicos/medicos.service';
+import Medico from 'src/app/classes/medicos/Medico';
+
 
 
 @Component({
@@ -16,26 +18,22 @@ import { EditarMedicosComponent } from './editar-medicos/editar-medicos.componen
 })
 export class MedicosComponent implements AfterViewInit {
 
-  public dataSource = new MatTableDataSource(DATA_PEOPLE);
+  cadastroForm!: FormGroup;
 
-  public displayColumns: string[] = ['name', 'cpf', 'address', 'phone', 'city', 'actions'];
+  medicos: Medico[] = [];
 
-  public cadastroForm: FormGroup;
-
-  constructor(public dialog: MatDialog, private fb: FormBuilder) {
-
-    this.cadastroForm = this.fb.group({
-      nome: ['', Validators.required],
-      especialidade: ['', Validators.required],
-      cpf: ['', [Validators.required]],
-      endereco: ['', Validators.required],
-      cidade: ['', Validators.required]
-      
-    });
-  }
+  dataSource: MatTableDataSource<Medico> = new MatTableDataSource();
+  displayColumns: string[] = ['nome_medico', 'cpf_medico','crm_medico', 'telefone_medico', 'celular_medico', 'cidade_medico', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+
+  constructor(public dialog: MatDialog,
+    private fb: FormBuilder,
+    public medicoService: MedicosService,
+  ) { }
+
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -53,24 +51,34 @@ export class MedicosComponent implements AfterViewInit {
 
   ngOnInit() {
 
+    this.medicoService
+      .getMedicos()
+      .subscribe((data: Medico[]) => {
+        this.medicos = data;
+
+        this.dataSource.data = this.medicos;
+
+        console.log(this.medicos);
+      });
   }
 
   AddMedico(): void {
     const dialogRef = this.dialog.open(CadastroMedicosComponent, {
-      width: '40%', 
+      width: '47%',
+
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-    
+
     });
   }
 
   EditarMedico(): void {
     const dialogRef = this.dialog.open(EditarMedicosComponent, {
-      width: '40%',
+      width: '47%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
@@ -81,12 +89,9 @@ export class MedicosComponent implements AfterViewInit {
     });
   }
 
-  editUser(id: number) {
-    //esperando o backend
-  }
 
-  deleteUser(id: number) {
-    //esperando o backend
+  deletarMedico(id: number) {
+
   }
 
 }
