@@ -64,7 +64,8 @@ export class MedicosComponent implements AfterViewInit {
 
   AddMedico(): void {
     const dialogRef = this.dialog.open(CadastroMedicosComponent, {
-      width: '60%',
+      width: '47%',
+
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });
@@ -77,7 +78,7 @@ export class MedicosComponent implements AfterViewInit {
 
   EditarMedico(): void {
     const dialogRef = this.dialog.open(EditarMedicosComponent, {
-      width: '60%',
+      width: '47%',
       disableClose: true,
       data: { cadastroForm: this.cadastroForm }
     });

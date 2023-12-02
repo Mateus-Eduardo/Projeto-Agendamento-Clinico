@@ -18,14 +18,15 @@ export class MedicosService {
   }
 
   createNewMedico(
-    nome_especialidade: string, // Corrigido para ser uma string
+    nome_especialidade: string, 
     nome_medico: string,
     crm_medico: number,
     cpf_medico: number,
     cidade_medico: string,
     telefone_medico: number,
     celular_medico: number,
-    email_medico: string
+    email_medico: string,
+    endereco_medico: string,
 
   ): Observable<any> {
     const medico = {
@@ -37,6 +38,7 @@ export class MedicosService {
       telefone_medico,
       celular_medico,
       email_medico,
+      endereco_medico,
     };
 
     return this.http.post(`${this.uri}/medicos`, medico);

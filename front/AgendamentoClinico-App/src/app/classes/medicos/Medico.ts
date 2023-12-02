@@ -1,5 +1,5 @@
 export default class Medico{
-  nome_especialidade!: number;
+  nome_especialidade!: string;
   nome_medico!: string;
   crm_medico!: number;
   cpf_medico!: number;
@@ -7,4 +7,5 @@ export default class Medico{
   telefone_medico!: number;
   celular_medico!: number;
   email_medico!: string;
+  endereco_medico!: string;
 }
