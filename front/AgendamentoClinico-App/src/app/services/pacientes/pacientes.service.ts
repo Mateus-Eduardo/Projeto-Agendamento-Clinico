@@ -42,4 +42,6 @@ export class PacientesService {
       duration: 2000,
     });
   }
+
+
 }

@@ -1,3 +1,5 @@
+<div class="background-container">
+
 <mat-card class="login-card">
 
   <img src="assets/logo/_NEWCARD.PNG" alt="Logo" class="logo">
@@ -17,12 +19,13 @@
       <mat-form-field>
         <mat-label>Digite a Senha</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha">
-        <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-error *ngIf="senha.invalid">{{ getErrorMessage() }}</mat-error>
+        <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-
         </button>
       </mat-form-field>
+
+
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
       <div class="button-container">
         <!-- Remova type="submit" do botão -->
@@ -40,3 +43,4 @@
     </form>
   </mat-card-content>
 </mat-card>
+</div>

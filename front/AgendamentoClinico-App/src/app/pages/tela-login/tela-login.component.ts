@@ -41,7 +41,10 @@ export class TelaLoginComponent implements OnInit {
       }
     );
   }
-
+  togglePasswordVisibility() {
+    this.hide = !this.hide;
+  }
+  
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'Este campo é obrigatório';

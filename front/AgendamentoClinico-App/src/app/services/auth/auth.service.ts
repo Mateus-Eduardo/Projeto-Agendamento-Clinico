@@ -1,16 +1,19 @@
-// auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';  // Importe BehaviorSubject
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private isAuthenticatedValue: boolean = false;
+  // Use BehaviorSubject para notificar os assinantes sobre alterações no estado de autenticação
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();  // Exponha como Observable
+
   private authTokenKey = 'authToken';
+  private isAuthenticatedValue: boolean = false;  // Mantenha a propriedade para consulta direta
 
   uri = 'http://localhost:3000/api/auth';
 
@@ -85,6 +88,7 @@ export class AuthService {
   setAuthenticated(isAuthenticated: boolean) {
     console.log(`Setting isAuthenticated to: ${isAuthenticated}`);
     this.isAuthenticatedValue = isAuthenticated;
+    this.isAuthenticatedSubject.next(isAuthenticated);  // Notifique os assinantes sobre a mudança
   }
 
   checkAuthenticationAndRedirect() {

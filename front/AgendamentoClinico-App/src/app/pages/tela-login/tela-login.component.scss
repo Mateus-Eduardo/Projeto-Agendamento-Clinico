@@ -1,6 +1,18 @@
+.background-container {
+  background-image: url('https://i.pinimg.com/originals/85/64/cd/8564cdc8db657a0acb3088ff14c7e1ef.jpg'); /* Substitua pelo caminho da sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ajuste conforme necessário */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login-card {
   max-width: 350px;
   margin: 100px auto;
+  padding: 20px;
+  width: 80%;
 
 
   background-color: rgb(255, 255, 255);
@@ -70,7 +82,7 @@
   .error-message {
     color: #d32f2f; /* Cor vermelha, você pode ajustar conforme necessário */
     font-size: 14px;
-    margin-left: 75px;
+    margin-left: 50px;
   }
   /* Adicione este estilo para animações (opcional) */
   @keyframes fadeIn {

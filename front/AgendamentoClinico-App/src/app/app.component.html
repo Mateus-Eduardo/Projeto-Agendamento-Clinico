@@ -1,16 +1,9 @@
-
-<!--*ngIf="isLogado" -->
-<!-- <app-sidenav></app-sidenav> -->
-<app-toolbar ></app-toolbar>
-<app-navbar ></app-navbar>
+<ng-container *ngIf="isLogado">
+  <app-toolbar></app-toolbar>
+  <app-navbar></app-navbar>
+</ng-container>
 
 <div class="content">
   <router-outlet></router-outlet>
 </div>
-
-
-
-
-
-
 
