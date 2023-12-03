@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import Funcionario from 'src/app/classes/funcionarios/Funcionario';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class FuncionarioService {
 
   uri = 'http://localhost:3000/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,  private _snackBar: MatSnackBar) { }
 
   getFuncionario(): Observable<Funcionario[]> {
     return this.http.get<Funcionario[]>(`${this.uri}/api`);
@@ -43,5 +44,12 @@ export class FuncionarioService {
         })
       )
       .subscribe((res: any) => console.log('Feito'));
+  }
+
+
+  showSuccessMessage() {
+    this._snackBar.open('Funcionario Cadastrado com sucesso!', 'Fechar', {
+      duration: 2000,
+    });
   }
 }

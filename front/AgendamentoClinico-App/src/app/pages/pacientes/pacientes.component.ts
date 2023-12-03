@@ -92,6 +92,7 @@ export class PacientesComponent implements AfterViewInit {
 
   deletarPaciente(id: number) {
 
+
   }
 
 

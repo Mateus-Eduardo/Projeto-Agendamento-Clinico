@@ -1,11 +1,19 @@
-.container-geral {
+.background-container {
+  background-image: url('https://gruponewcard.com.br/wp-content/uploads/2022/09/contato-new-card-1440x630.jpg');
+  height: 100vh;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.container-geral {
   margin: 0 auto;
   margin-top: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  padding: 20px;
 
   .Login {
     position: absolute;
@@ -13,13 +21,13 @@
     right: 20px;
     color: #21db00; /* Cor do ícone */
     font-size: 30px;
-
   }
 
-  mat-card{
+  mat-card {
     margin: 0 auto;
     margin-bottom: 20px;
     width: 50%;
+    background-color: #fff; /* Cor de fundo do cartão */
   }
 
   mat-form-field {
@@ -28,7 +36,7 @@
   }
 
   mat-card-title {
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 25px;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -37,7 +45,7 @@
     color: #326089;
   }
 
-  botao-login{
+  botao-login {
     width: 50%;
     margin: 0 auto;
     position: absolute;
@@ -45,9 +53,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: red($color: #000000);
-
   }
-
 
   .mat-card {
     width: 50%;
@@ -73,15 +79,15 @@
     margin-left: 8px;
   }
 
-  .botao-cadastro{
+  .botao-cadastro {
     background-color: #0e6a8e;
     color: #fff;
   }
-
-  mat-icon{
+  .Limpar{
+    background-color: #ee7c75;
+    color: #fff;
+  }
+  mat-icon {
     color: red($color: #000000);
   }
-
-
-
 }
