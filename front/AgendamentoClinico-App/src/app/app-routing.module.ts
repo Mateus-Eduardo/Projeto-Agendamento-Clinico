@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tela-login', pathMatch: 'full' },
+  { path: '', redirectTo: 'agendamento', pathMatch: 'full' },
   { path: 'tela-login', loadChildren: () => import('./pages/tela-login/tela-login.module').then(m => m.TelaLoginModule) },
   { path: 'agendamento',canActivate: [AuthGuard],loadChildren: () => import('./pages/agendamento/agendamento.module').then(m => m.AgendamentoModule) },
   { path: 'consultas',  canActivate: [AuthGuard], loadChildren: () => import('./pages/consultas/consultas.module').then(m => m.ConsultasModule) },
