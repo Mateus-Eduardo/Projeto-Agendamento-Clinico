@@ -23,6 +23,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import interactionPlugin from '@fullcalendar/interaction';
 import daygridPlugin from '@fullcalendar/daygrid';
+import { StoreModule } from '@ngrx/store';
 
 // FullCalendarModule.registerPlugins([
 //   interactionPlugin,
@@ -57,7 +58,8 @@ import daygridPlugin from '@fullcalendar/daygrid';
     ReactiveFormsModule,
     MatSidenavModule,
     HttpClientModule,
-    FullCalendarModule
+    FullCalendarModule,
+    StoreModule.forRoot({}, {})
 
 
 
