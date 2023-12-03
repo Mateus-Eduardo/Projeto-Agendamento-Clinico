@@ -27,6 +27,7 @@ export class FuncionarioComponent {
 
   cadastrarFuncionario(nome_funcionario: string, email_funcionario: string, senha_funcionario: string): void {
     this.funcionarioService.cadastrarFuncionario(nome_funcionario, email_funcionario, senha_funcionario);
+    this.funcionarioService.showSuccessMessage(); // Chame o método aqui
   }
 
   onSubmit() {
