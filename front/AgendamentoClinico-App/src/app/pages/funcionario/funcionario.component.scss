@@ -1,11 +1,13 @@
 .background-container {
-  background-image: url('https://gruponewcard.com.br/wp-content/uploads/2022/09/contato-new-card-1440x630.jpg');
+  background: url('https://gruponewcard.com.br/wp-content/uploads/2022/09/contato-new-card-1440x630.jpg') no-repeat center center fixed;
+  background-size: cover;
   height: 100vh;
-  padding-left: 50px;
+  padding: 0; /* Remover o padding para garantir que a imagem cubra toda a largura */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .container-geral {
   margin: 0 auto;
