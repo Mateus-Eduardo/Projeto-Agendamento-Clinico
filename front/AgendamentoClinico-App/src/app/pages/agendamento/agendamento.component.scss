@@ -1,5 +1,6 @@
 .content{
   background-color: #efefef;
+  text-decoration: none;
 
 }
 
@@ -10,22 +11,25 @@
   border-bottom: 1px solid #ddd;
   padding: 0 10px;
   line-height: 40px;
-  font-size: 12px;
+  font-size: 7px;
+  text-decoration: none;
 
 
   .demo-inline-calendar-card {
     width: 100%;
+    text-decoration: none;
 
   }
 
   mat-calendar-body-label{
     width: 100%;
+    text-decoration: none;
   }
 }
 
 h2 {
   margin: 0;
-  font-size: 16px;
+  font-size: 7px;
   text-decoration: none;
   color: #0e6a8e;
 }
@@ -70,6 +74,7 @@ b { /* used for event dates/times */
 .fc { /* the calendar root */
   max-width: 2100px;
   margin: 0 auto;
+  text-decoration: none;
 }
 
 
