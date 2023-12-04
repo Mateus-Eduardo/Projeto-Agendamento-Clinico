@@ -11,9 +11,11 @@ import 'moment/locale/pt-br';
 @Component({
   selector: 'app-root',
   templateUrl: './agendamento.component.html',
-  styleUrls: ['./agendamento.component.scss']
+  styleUrls: ['./agendamento.component.scss', './vars.css']
 })
 export class AgendamentoComponent implements OnInit {
+
+
   calendarVisible = true;
   calendarOptions: CalendarOptions = {};
 

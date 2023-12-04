@@ -8,12 +8,26 @@
   <div class="calendar">
     <div class="demo-app">
       <div class="demo-app-main">
-        <full-calendar *ngIf="calendarVisible" [options]="calendarOptions">
+        <full-calendar *ngIf="calendarVisible"
+          [options]="calendarOptions"
+          style="
+                background-color: #c7c7c7;
+                padding: 20px;
+                border-radius: 10px;
+                .a{
+                  text-decoration: none;
+                  color: #c7c7c7;
+                }
+
+
+
+
+                ">
           <ng-template #eventContent let-arg>
-            <b>{{ arg.timeText }}</b>
-            <i>{{ arg.event.title }}</i>
+             <b>{{ arg.timeText }}</b>
+             <i>{{ arg.event.title }}</i>
           </ng-template>
-        </full-calendar>
+       </full-calendar>
       </div>
     </div>
   </div>
