@@ -1,12 +1,13 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, ViewChild } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
-import allLocales from '@fullcalendar/core/locales-all';
 import 'moment/locale/pt-br';
+import { Calendar } from '@fullcalendar/core';
+import bootstrap5Plugin from '@fullcalendar/bootstrap5';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ import 'moment/locale/pt-br';
 })
 export class AgendamentoComponent implements OnInit {
 
-
+  @ViewChild('fullcalendar') fullcalendar: any;
   calendarVisible = true;
   calendarOptions: CalendarOptions = {};
 
@@ -31,7 +32,7 @@ export class AgendamentoComponent implements OnInit {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
       },
-      initialView: 'timeGridDay',
+      initialView: 'timeGridWeek',
       initialEvents: INITIAL_EVENTS,
       weekends: true,
       editable: true,
@@ -52,6 +53,15 @@ export class AgendamentoComponent implements OnInit {
     };
   }
 
+  ngAfterViewInit() {
+    const calendar = new Calendar(this.fullcalendar.nativeElement, {
+      plugins: [ bootstrap5Plugin ],
+      themeSystem: 'bootstrap5'
+    });
+
+    calendar.render();
+  }
+
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
   }
@@ -61,30 +71,15 @@ export class AgendamentoComponent implements OnInit {
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('POR FAVOR INSIRA UM NOVO AGENDAMENTO');
-    const calendarApi = selectInfo.view.calendar;
-
-    calendarApi.unselect(); // clear date selection
-
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay
-      });
-    }
+    // Código para lidar com a seleção de data
   }
 
   handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`REALMENTE DESEJA DELETAR?'${clickInfo.event.title}'`)) {
-      clickInfo.event.remove();
-    }
+    // Código para lidar com o clique em um evento
   }
 
   handleEvents(events: EventApi[]) {
     this.currentEvents = events;
-    this.changeDetector.detectChanges(); // workaround for ExpressionChangedAfterItHasBeenCheckedError
+    this.changeDetector.detectChanges();
   }
 }
